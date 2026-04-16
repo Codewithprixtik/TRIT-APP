@@ -1,0 +1,33 @@
+# Netlify Configuration for TRIT PWA
+
+[build]
+  functions = "netlify/functions"
+  publish   = "."
+
+[build.environment]
+  SECRETS_SCAN_OMIT_KEYS = "UPSTOX_API_KEY,UPSTOX_API_SECRET,TRIT_ADMIN_PASSWORD"
+
+[[headers]]
+  for = "/manifest.json"
+  [headers.values]
+    Content-Type  = "application/manifest+json"
+    Cache-Control = "no-cache"
+
+[[headers]]
+  for = "/sw.js"
+  [headers.values]
+    Content-Type           = "application/javascript"
+    Cache-Control          = "no-cache"
+    Service-Worker-Allowed = "/"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options        = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+
+# Protect admin page
+[[redirects]]
+  from   = "/admin"
+  to     = "/admin.html"
+  status = 200
