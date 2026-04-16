@@ -1,9 +1,8 @@
-// Netlify Function — Market Data Proxy
-// Upstox API v2 Integration
-// IMPORTANT: Move API keys to Netlify Environment Variables after setup!
+// Netlify Function — Upstox Market Data Proxy
+// Keys stored securely in Netlify Environment Variables
 
-const API_KEY    = process.env.UPSTOX_API_KEY    || '4540a89a-adcd-45c5-8f68-a3cbca2e87c7';
-const API_SECRET = process.env.UPSTOX_API_SECRET || 'lbtvpak4cu';
+const API_KEY    = process.env.UPSTOX_API_KEY;
+const API_SECRET = process.env.UPSTOX_API_SECRET;
 
 exports.handler = async (event, context) => {
     const headers = {
@@ -16,14 +15,23 @@ exports.handler = async (event, context) => {
         return { statusCode: 200, headers, body: '' };
     }
 
+    if (!API_KEY || !API_SECRET) {
+        return { statusCode: 500, headers, body: JSON.stringify({ error: 'API keys not configured' }) };
+    }
+
     const params = event.queryStringParameters || {};
     const action = params.action;
+
+    // ── Auth URL ──
+    if (action === 'authurl') {
+        const url = `https://api.upstox.com/v2/login/authorization/dialog?response_type=code&client_id=${API_KEY}&redirect_uri=${encodeURIComponent('https://thatrookieindiantrader.in/callback')}`;
+        return { statusCode: 200, headers, body: JSON.stringify({ url }) };
+    }
 
     // ── OAuth Token Exchange ──
     if (action === 'token') {
         const code = params.code;
         if (!code) return { statusCode: 400, headers, body: JSON.stringify({ error: 'No code' }) };
-
         try {
             const resp = await fetch('https://api.upstox.com/v2/login/authorization/token', {
                 method : 'POST',
@@ -43,12 +51,12 @@ exports.handler = async (event, context) => {
         }
     }
 
-    // ── Market Quotes (requires access token) ──
+    // ── Market Quotes ──
     if (action === 'quotes') {
         const token   = params.token;
-        const symbols = params.symbols; // e.g. "NSE_EQ|INE002A01018,NSE_EQ|INE009A01021"
+        const symbols = params.symbols;
         if (!token || !symbols) {
-            return { statusCode: 400, headers, body: JSON.stringify({ error: 'Missing token or symbols' }) };
+            return { statusCode: 400, headers, body: JSON.stringify({ error: 'Missing params' }) };
         }
         try {
             const resp = await fetch(
@@ -65,12 +73,11 @@ exports.handler = async (event, context) => {
     // ── Historical Candles ──
     if (action === 'candles') {
         const token    = params.token;
-        const symbol   = params.symbol  || 'NSE_EQ|INE002A01018';
+        const symbol   = params.symbol   || 'NSE_EQ|INE002A01018';
         const interval = params.interval || '30minute';
         const toDate   = params.to   || new Date().toISOString().split('T')[0];
-        const fromDate = params.from || new Date(Date.now() - 30*86400000).toISOString().split('T')[0];
+        const fromDate = params.from || new Date(Date.now()-30*86400000).toISOString().split('T')[0];
         if (!token) return { statusCode: 400, headers, body: JSON.stringify({ error: 'No token' }) };
-
         try {
             const resp = await fetch(
                 `https://api.upstox.com/v2/historical-candle/${encodeURIComponent(symbol)}/${interval}/${toDate}/${fromDate}`,
@@ -81,12 +88,6 @@ exports.handler = async (event, context) => {
         } catch(e) {
             return { statusCode: 500, headers, body: JSON.stringify({ error: e.message }) };
         }
-    }
-
-    // ── Auth URL ──
-    if (action === 'authurl') {
-        const url = `https://api.upstox.com/v2/login/authorization/dialog?response_type=code&client_id=${API_KEY}&redirect_uri=${encodeURIComponent('https://thatrookieindiantrader.in/callback')}`;
-        return { statusCode: 200, headers, body: JSON.stringify({ url }) };
     }
 
     return { statusCode: 400, headers, body: JSON.stringify({ error: 'Unknown action' }) };
