@@ -1,0 +1,150 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <!-- Background gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#0f0f0f"/>
+      <stop offset="100%" stop-color="#1a1200"/>
+    </linearGradient>
+    <!-- Gold gradient for text -->
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#FFE566"/>
+      <stop offset="100%" stop-color="#FFB300"/>
+    </linearGradient>
+    <!-- Orange gradient -->
+    <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#FF8C00"/>
+      <stop offset="100%" stop-color="#E65000"/>
+    </linearGradient>
+    <!-- Glow filter -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <!-- Subtle inner glow -->
+    <filter id="softglow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <!-- Clip for rounded square -->
+    <clipPath id="roundedClip">
+      <rect width="512" height="512" rx="110" ry="110"/>
+    </clipPath>
+  </defs>
+
+  <!-- Rounded square background -->
+  <rect width="512" height="512" rx="110" ry="110" fill="url(#bgGrad)"/>
+
+  <!-- Subtle grid pattern -->
+  <g opacity="0.06" clip-path="url(#roundedClip)">
+    <line x1="0" y1="64"  x2="512" y2="64"  stroke="#FFD700" stroke-width="1"/>
+    <line x1="0" y1="128" x2="512" y2="128" stroke="#FFD700" stroke-width="1"/>
+    <line x1="0" y1="192" x2="512" y2="192" stroke="#FFD700" stroke-width="1"/>
+    <line x1="0" y1="256" x2="512" y2="256" stroke="#FFD700" stroke-width="1"/>
+    <line x1="0" y1="320" x2="512" y2="320" stroke="#FFD700" stroke-width="1"/>
+    <line x1="0" y1="384" x2="512" y2="384" stroke="#FFD700" stroke-width="1"/>
+    <line x1="0" y1="448" x2="512" y2="448" stroke="#FFD700" stroke-width="1"/>
+    <line x1="64"  y1="0" x2="64"  y2="512" stroke="#FFD700" stroke-width="1"/>
+    <line x1="128" y1="0" x2="128" y2="512" stroke="#FFD700" stroke-width="1"/>
+    <line x1="192" y1="0" x2="192" y2="512" stroke="#FFD700" stroke-width="1"/>
+    <line x1="256" y1="0" x2="256" y2="512" stroke="#FFD700" stroke-width="1"/>
+    <line x1="320" y1="0" x2="320" y2="512" stroke="#FFD700" stroke-width="1"/>
+    <line x1="384" y1="0" x2="384" y2="512" stroke="#FFD700" stroke-width="1"/>
+    <line x1="448" y1="0" x2="448" y2="512" stroke="#FFD700" stroke-width="1"/>
+  </g>
+
+  <!-- Golden border ring -->
+  <rect x="6" y="6" width="500" height="500" rx="106" ry="106"
+        fill="none" stroke="url(#goldGrad)" stroke-width="4" opacity="0.6"/>
+
+  <!-- ═══ CANDLESTICK CHART ═══ -->
+  <!-- Chart area background -->
+  <rect x="68" y="88" width="376" height="220" rx="12"
+        fill="#0a0a0a" opacity="0.7"/>
+
+  <!-- Chart line (uptrend) -->
+  <polyline
+    points="90,260 150,230 200,245 240,195 290,170 340,145 420,115"
+    fill="none" stroke="url(#goldGrad)" stroke-width="3.5"
+    stroke-linecap="round" stroke-linejoin="round" opacity="0.35"/>
+
+  <!-- Candlesticks — BEARISH (red) -->
+  <!-- Candle 1 -->
+  <line x1="112" y1="228" x2="112" y2="262" stroke="#E74C3C" stroke-width="2"/>
+  <rect x="104" y="232" width="16" height="22" rx="2" fill="#E74C3C"/>
+  <!-- Candle 2 -->
+  <line x1="152" y1="215" x2="152" y2="248" stroke="#E74C3C" stroke-width="2"/>
+  <rect x="144" y="218" width="16" height="20" rx="2" fill="#E74C3C"/>
+
+  <!-- Candlesticks — BULLISH (green) -->
+  <!-- Candle 3 -->
+  <line x1="192" y1="198" x2="192" y2="240" stroke="#2ECC71" stroke-width="2"/>
+  <rect x="184" y="205" width="16" height="24" rx="2" fill="#2ECC71"/>
+  <!-- Candle 4 -->
+  <line x1="232" y1="175" x2="232" y2="215" stroke="#2ECC71" stroke-width="2"/>
+  <rect x="224" y="181" width="16" height="22" rx="2" fill="#2ECC71"/>
+  <!-- Candle 5 — LARGE BULL -->
+  <line x1="272" y1="152" x2="272" y2="200" stroke="#2ECC71" stroke-width="2"/>
+  <rect x="264" y="158" width="16" height="30" rx="2" fill="#2ECC71"/>
+  <!-- Candle 6 -->
+  <line x1="312" y1="132" x2="312" y2="178" stroke="#2ECC71" stroke-width="2"/>
+  <rect x="304" y="138" width="16" height="26" rx="2" fill="#2ECC71"/>
+  <!-- Candle 7 — BEAR dip -->
+  <line x1="352" y1="128" x2="352" y2="165" stroke="#E74C3C" stroke-width="2"/>
+  <rect x="344" y="132" width="16" height="20" rx="2" fill="#E74C3C"/>
+  <!-- Candle 8 — BIG BULL -->
+  <line x1="392" y1="108" x2="392" y2="158" stroke="#2ECC71" stroke-width="2.5"/>
+  <rect x="383" y="114" width="18" height="32" rx="2" fill="#2ECC71"/>
+
+  <!-- Rising arrow at end -->
+  <g filter="url(#softglow)">
+    <polyline
+      points="385,112 400,96 415,112"
+      fill="none" stroke="#2ECC71" stroke-width="3"
+      stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- ═══ TRIT TEXT ═══ -->
+  <!-- Main TRIT lettering -->
+  <text x="256" y="378"
+        font-family="'Arial Black', 'Impact', sans-serif"
+        font-weight="900"
+        font-size="118"
+        letter-spacing="8"
+        text-anchor="middle"
+        fill="url(#goldGrad)"
+        filter="url(#glow)">TRIT</text>
+
+  <!-- Dot accent -->
+  <circle cx="404" cy="345" r="9" fill="url(#orangeGrad)" filter="url(#softglow)"/>
+
+  <!-- Tagline -->
+  <text x="256" y="420"
+        font-family="'Arial', sans-serif"
+        font-weight="600"
+        font-size="26"
+        letter-spacing="5"
+        text-anchor="middle"
+        fill="#FFD700"
+        opacity="0.65">THAT ROOKIE INDIAN TRADER</text>
+
+  <!-- Bottom gold bar accent -->
+  <rect x="156" y="440" width="200" height="4" rx="2" fill="url(#goldGrad)" opacity="0.7"/>
+
+  <!-- Corner ₹ symbol top-left -->
+  <text x="58" y="78"
+        font-family="'Arial', sans-serif"
+        font-size="28" font-weight="700"
+        fill="#FFD700" opacity="0.4">₹</text>
+
+  <!-- Corner chart up top-right -->
+  <text x="446" y="78"
+        font-family="'Arial', sans-serif"
+        font-size="24"
+        fill="#2ECC71" opacity="0.4">↗</text>
+</svg>

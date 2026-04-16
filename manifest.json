@@ -1,0 +1,41 @@
+{
+  "name": "That Rookie Indian Trader",
+  "short_name": "TRIT",
+  "description": "Learn stock market trading the fun way! Tutorial videos, paper trading, book orders and more.",
+  "start_url": "/app.html",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#080808",
+  "theme_color": "#FFD700",
+  "lang": "en-IN",
+  "categories": ["education", "finance"],
+  "icons": [
+    {
+      "src": "trit-logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "trit-logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Paper Trading",
+      "short_name": "Trade",
+      "description": "Start paper trading",
+      "url": "/app.html"
+    },
+    {
+      "name": "Market News",
+      "short_name": "News",
+      "description": "Latest market news",
+      "url": "/app.html"
+    }
+  ]
+}

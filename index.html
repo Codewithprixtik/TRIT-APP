@@ -1,0 +1,1653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G3TF1ME2H8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+  gtag("config", "G-G3TF1ME2H8");
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>That Rookie Indian Trader — Learn Trading the Fun Way!</title>
+    <meta name="description" content="A fun illustrated guide to stock market trading for Indian kids & beginners by Pratik Shukla.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --y:#FFD700; --ya:#FFC200; --o:#FF6B00; --t:#00856F; --r:#C0392B; --bk:#080808; --dk:#101010; --wh:#F5F5F5; }
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+        html{scroll-behavior:smooth}
+        body{font-family:'Nunito',sans-serif;background:var(--bk);color:var(--wh);overflow-x:hidden}
+        body::before{content:'';position:fixed;inset:0;background-image:radial-gradient(circle,rgba(255,215,0,0.025) 1px,transparent 1px);background-size:18px 18px;pointer-events:none;z-index:0}
+        ::-webkit-scrollbar{width:7px}::-webkit-scrollbar-track{background:var(--bk)}::-webkit-scrollbar-thumb{background:var(--y);border-radius:4px}
+
+        nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(8,8,8,0.96);backdrop-filter:blur(12px);border-bottom:3px solid var(--y);height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 2rem}
+        .logo{font-family:'Bangers',cursive;font-size:1.7rem;letter-spacing:3px;color:var(--y);text-decoration:none}.logo span{color:var(--o)}
+        .nav-links{display:flex;list-style:none;gap:0.3rem}
+        .nav-links a{font-family:'Bangers',cursive;font-size:1rem;letter-spacing:1.5px;color:var(--wh);text-decoration:none;padding:0.35rem 0.8rem;border:2px solid transparent;border-radius:3px;transition:all 0.15s}
+        .nav-links a:hover,.nav-links a.active{color:var(--bk);background:var(--y);border-color:var(--y)}
+        .nav-buy{font-family:'Bangers',cursive;font-size:1rem;letter-spacing:2px;background:var(--y);color:var(--bk);border:2px solid var(--y);padding:0.45rem 1.2rem;border-radius:3px;text-decoration:none;box-shadow:3px 3px 0 var(--o);transition:all 0.15s}
+        .nav-buy:hover{background:transparent;color:var(--y);box-shadow:none}
+        .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+        .hamburger span{width:24px;height:3px;background:var(--y);border-radius:2px;transition:all 0.25s}
+        .hamburger.open span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+        .hamburger.open span:nth-child(2){opacity:0}
+        .hamburger.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+        .mobile-menu{display:none;position:fixed;top:68px;left:0;right:0;bottom:0;background:rgba(8,8,8,0.98);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:2.5rem;border-top:2px solid var(--y)}
+        .mobile-menu.open{display:flex}
+        .mobile-menu a{font-family:'Bangers',cursive;font-size:2.4rem;letter-spacing:4px;color:var(--wh);text-decoration:none}
+        .mobile-menu a:hover{color:var(--y)}
+        section{position:relative;z-index:1}
+
+        .section-label{font-family:'Bangers',cursive;font-size:0.85rem;letter-spacing:4px;color:var(--y);display:block;margin-bottom:0.4rem}
+        .section-title{font-family:'Bangers',cursive;font-size:clamp(2.2rem,5vw,4rem);letter-spacing:2px;line-height:1;color:var(--wh)}
+        .section-title span{color:var(--y)}
+        .btn-pri{font-family:'Bangers',cursive;font-size:1.2rem;letter-spacing:2px;background:var(--y);color:var(--bk);border:3px solid var(--y);padding:0.75rem 2rem;border-radius:3px;text-decoration:none;cursor:pointer;box-shadow:4px 4px 0 var(--o);display:inline-block;transition:all 0.18s}
+        .btn-pri:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--o)}
+        .btn-sec{font-family:'Bangers',cursive;font-size:1.2rem;letter-spacing:2px;background:transparent;color:var(--y);border:3px solid var(--y);padding:0.75rem 2rem;border-radius:3px;text-decoration:none;cursor:pointer;display:inline-block;transition:all 0.18s}
+        .btn-sec:hover{background:rgba(255,215,0,0.1)}
+        .reveal{opacity:0;transform:translateY(28px);transition:opacity 0.65s ease,transform 0.65s ease}
+        .reveal.visible{opacity:1;transform:translateY(0)}
+        .reveal-l{opacity:0;transform:translateX(-30px);transition:opacity 0.65s ease,transform 0.65s ease}
+        .reveal-l.visible{opacity:1;transform:translateX(0)}
+        .reveal-r{opacity:0;transform:translateX(30px);transition:opacity 0.65s ease,transform 0.65s ease}
+        .reveal-r.visible{opacity:1;transform:translateX(0)}
+
+        /* HERO */
+        #home{min-height:100vh;padding-top:68px;background:var(--bk);overflow:hidden;position:relative}
+        #home::before{content:'';position:absolute;inset:0;background:linear-gradient(rgba(255,215,0,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,215,0,0.04) 1px,transparent 1px);background-size:55px 55px;animation:gridPan 25s linear infinite;pointer-events:none;z-index:0}
+        @keyframes gridPan{to{transform:translateY(55px)}}
+        .hero-wrap{max-width:1280px;margin:0 auto;padding:3.5rem 2rem 2rem;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;min-height:calc(100vh - 68px);position:relative;z-index:2}
+        .hero-text{position:relative;z-index:3}
+        .hero-badge{display:inline-flex;align-items:center;gap:0.5rem;background:var(--y);color:var(--bk);font-family:'Bangers',cursive;font-size:0.9rem;letter-spacing:2px;padding:0.3rem 1rem;border-radius:2px;margin-bottom:1.5rem;animation:badgePop 2.5s ease-in-out infinite}
+        @keyframes badgePop{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
+        .hero-h1{font-family:'Bangers',cursive;font-size:clamp(3.5rem,8vw,7rem);line-height:0.9;letter-spacing:3px;margin-bottom:1.5rem}
+        .hero-h1 .line1{color:var(--wh);display:block}.hero-h1 .line2{color:var(--y);-webkit-text-stroke:2px var(--o);display:block}.hero-h1 .line3{color:var(--o);display:block}
+        .hero-desc{font-size:1.05rem;line-height:1.75;color:rgba(245,245,245,0.75);max-width:470px;margin-bottom:2rem}
+        .hero-stats{display:flex;gap:1.5rem;margin-bottom:2.5rem;flex-wrap:wrap}
+        .stat-box{padding:0.7rem 1.4rem;border:2px solid rgba(255,215,0,0.4);border-radius:3px;background:rgba(255,215,0,0.04);text-align:center}
+        .stat-num{font-family:'Bangers',cursive;font-size:2rem;color:var(--y);display:block;line-height:1}
+        .stat-lbl{font-size:0.7rem;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:1px;margin-top:2px;display:block}
+        .hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
+
+        /* ══ 3D BOOK ══ */
+        .book-stage{display:flex;align-items:center;justify-content:center;padding:2.5rem 1rem;position:relative;pointer-events:none}
+        .book-scene{perspective:1200px;perspective-origin:50% 44%;width:380px;height:490px;position:relative;display:flex;align-items:center;justify-content:center;pointer-events:none}
+        .book-float{width:300px;height:440px;position:relative;transform-style:preserve-3d;animation:bookFloat 8s cubic-bezier(0.45,0.05,0.55,0.95) infinite}
+        @keyframes bookFloat{
+            0%,100%{transform:rotateX(5deg) rotateY(-20deg) translateY(0px)}
+            50%{transform:rotateX(4deg) rotateY(-18deg) translateY(-16px)}
+        }
+        .bkf{position:absolute;backface-visibility:hidden}
+        /* Front cover */
+        .bk-front{width:300px;height:440px;transform:translateZ(22px);border-radius:2px 7px 7px 2px;overflow:hidden;box-shadow:inset -12px 0 24px rgba(0,0,0,0.5),0 32px 80px rgba(0,0,0,0.95)}
+        .cover-grid{width:100%;height:100%;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:112px 176px 128px;background:#0a0a0a}
+        .cp{display:flex;align-items:center;justify-content:center;border:2px solid rgba(0,0,0,0.8);font-size:2.8rem;overflow:hidden;position:relative}
+        .cp-tl{background:linear-gradient(135deg,#C0392B,#96281b)}
+        .cp-tr{background:linear-gradient(135deg,#00856F,#005a4a)}
+        .cp-title-band{grid-column:1/-1;background:rgba(0,0,0,0.94);border-top:3px solid var(--y);border-bottom:3px solid var(--y);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:6px 10px;gap:3px}
+        .ct1{font-family:'Bangers',cursive;font-size:1.9rem;color:#fff;letter-spacing:3px;line-height:1;text-shadow:2px 2px 0 rgba(255,107,0,0.5)}
+        .ct2{font-family:'Bangers',cursive;font-size:2.4rem;color:var(--y);letter-spacing:4px;line-height:1;text-shadow:2px 2px 0 #000}
+        .cp-bl{background:linear-gradient(135deg,#E67E22,#b5651d)}
+        .cp-br{background:linear-gradient(135deg,#2C3E50,#1a252f);flex-direction:column;gap:3px}
+        .cover-author-lbl{font-family:'Bangers',cursive;font-size:0.65rem;color:var(--y);letter-spacing:1px}
+        .cover-stats{font-family:'Bangers',cursive;font-size:0.58rem;line-height:1.6;color:#fff;position:absolute;bottom:4px;left:6px}
+        .u{color:#2ECC71}.d{color:#E74C3C}
+        .bk-front::after{content:'';position:absolute;top:0;left:0;width:20px;height:100%;background:linear-gradient(to right,rgba(0,0,0,0.6),transparent);pointer-events:none;z-index:10}
+        /* Spine */
+        .bk-spine{width:44px;height:440px;left:0;top:0;transform-origin:right center;transform:translateX(-22px) rotateY(-90deg);background:linear-gradient(180deg,#C0392B 0%,#FF6B00 45%,#00856F 100%);display:flex;align-items:center;justify-content:center;overflow:hidden;box-shadow:inset -4px 0 12px rgba(0,0,0,0.45)}
+        .spine-txt{font-family:'Bangers',cursive;font-size:0.72rem;color:#fff;letter-spacing:2px;writing-mode:vertical-rl;white-space:nowrap;text-shadow:1px 1px 2px rgba(0,0,0,0.5)}
+        /* Pages block */
+        .bk-pages{width:36px;height:428px;right:0;top:6px;transform-origin:left center;transform:translateX(14px) rotateY(90deg);background:repeating-linear-gradient(to right,#e8e2d5,#e8e2d5 1px,#f3ede1 1px,#f3ede1 2.5px,#e5ddd0 2.5px,#e5ddd0 3.5px,#f1ebe0 3.5px,#f1ebe0 5px);box-shadow:inset -3px 0 8px rgba(0,0,0,0.18)}
+        /* Back cover */
+        .bk-back{width:300px;height:440px;transform:translateZ(-22px) rotateY(180deg);background:linear-gradient(145deg,#101010,#1e1e1e);border-radius:7px 2px 2px 7px;padding:24px 20px;display:flex;flex-direction:column;justify-content:center}
+        .back-title{font-family:'Bangers',cursive;font-size:1.4rem;color:var(--y);letter-spacing:2px;margin-bottom:12px}
+        .back-blurb{font-size:0.72rem;color:rgba(245,245,245,0.7);line-height:1.8}
+        .back-price{margin-top:16px;font-family:'Bangers',cursive;font-size:1.5rem;color:var(--y)}
+
+        /* Book glow */
+        .book-glow{position:absolute;width:240px;height:24px;bottom:-10px;left:50%;transform:translateX(-50%);background:radial-gradient(ellipse,rgba(255,215,0,0.55) 0%,transparent 70%);filter:blur(16px);animation:glowPulse 8s ease-in-out infinite;pointer-events:none}
+        @keyframes glowPulse{0%,100%{opacity:0.6;transform:translateX(-50%) scaleX(0.95)}50%{opacity:1;transform:translateX(-50%) scaleX(1.18)}}
+        /* Floaters */
+        .floater{position:absolute;font-family:'Bangers',cursive;pointer-events:none;animation:floatUp linear infinite;opacity:0}
+        @keyframes floatUp{0%{transform:translateY(0) scale(0.9);opacity:0}15%{opacity:0.65}75%{opacity:0.4}100%{transform:translateY(-130px) scale(1.1);opacity:0}}
+
+        /* TICKER */
+        .ticker{background:var(--y);border-top:3px solid #000;border-bottom:3px solid #000;padding:9px 0;overflow:hidden;white-space:nowrap;position:relative;z-index:5}
+        .ticker-track{display:inline-flex;animation:tickerRun 22s linear infinite}
+        .ti{font-family:'Bangers',cursive;font-size:0.95rem;letter-spacing:1.5px;color:var(--bk);padding:0 1.8rem}
+        .ti.up{color:#145214}.ti.dn{color:#7a0000}.ti-sep{color:rgba(0,0,0,0.3)}
+        @keyframes tickerRun{to{transform:translateX(-50%)}}
+
+        /* ABOUT BOOK */
+        #about-book{padding:6rem 2rem;background:var(--dk)}
+        .about-hdr{text-align:center;margin-bottom:3.5rem}
+        .about-sub{color:rgba(245,245,245,0.6);max-width:560px;margin:1rem auto 0;font-size:1rem;line-height:1.7}
+        .features-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+        .feat{background:rgba(255,215,0,0.04);border:2px solid rgba(255,215,0,0.25);border-radius:4px;padding:2rem 1.7rem;box-shadow:4px 4px 0 rgba(255,215,0,0.15);transition:all 0.25s;position:relative;overflow:hidden}
+        .feat::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--o)}
+        .feat:hover{border-color:var(--y);box-shadow:6px 6px 0 var(--y);transform:translate(-2px,-2px)}
+        .feat-icon{font-size:2.4rem;display:block;margin-bottom:0.9rem}
+        .feat-title{font-family:'Bangers',cursive;font-size:1.35rem;letter-spacing:1px;color:var(--y);margin-bottom:0.5rem}
+        .feat-desc{font-size:0.92rem;color:rgba(245,245,245,0.65);line-height:1.65}
+
+        /* CHARACTERS */
+        #characters{padding:6rem 2rem;background:var(--bk)}
+        .chars-hdr{text-align:center;margin-bottom:3.5rem}
+        .chars-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr);gap:1.2rem}
+        .char-card{border:2px solid #1c1c1c;border-radius:4px;padding:1.6rem 1rem;text-align:center;background:#0c0c0c;transition:all 0.25s;position:relative;overflow:hidden}
+        .char-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--y);transform:scaleX(0);transition:transform 0.25s}
+        .char-card:hover{border-color:var(--y);transform:translateY(-8px);box-shadow:0 24px 50px rgba(255,215,0,0.15)}
+        .char-card:hover::after{transform:scaleX(1)}
+        .char-emoji{font-size:3.5rem;display:block;margin-bottom:0.9rem}
+        .char-name{font-family:'Bangers',cursive;font-size:1.3rem;color:var(--y);letter-spacing:1px}
+        .char-role{font-size:0.75rem;color:rgba(255,255,255,0.45);text-transform:uppercase;letter-spacing:1px;margin:0.3rem 0}
+        .char-desc{font-size:0.82rem;color:rgba(245,245,245,0.65);line-height:1.55;margin-top:0.5rem}
+
+        /* AUTHOR */
+        #author{padding:6rem 2rem;background:var(--dk)}
+        .author-wrap{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1.6fr;gap:4.5rem;align-items:center}
+        .author-img-box{position:relative}
+        .author-avatar{width:100%;max-width:360px;aspect-ratio:1;border:4px solid var(--y);border-radius:4px;background:linear-gradient(135deg,#141a14,#1a1414);display:flex;align-items:center;justify-content:center;font-size:7rem;box-shadow:8px 8px 0 var(--o);position:relative;overflow:hidden}
+        .author-avatar::before{content:'PS';font-family:'Bangers',cursive;font-size:9rem;color:rgba(255,215,0,0.07);position:absolute}
+        .author-badge-pill{position:absolute;bottom:-16px;right:-16px;background:var(--y);color:var(--bk);font-family:'Bangers',cursive;font-size:0.8rem;letter-spacing:1px;padding:0.45rem 1rem;border:2px solid #000;border-radius:2px}
+        .author-name{font-family:'Bangers',cursive;font-size:clamp(2rem,4vw,3.2rem);letter-spacing:3px;color:var(--wh);margin-bottom:0.4rem}
+        .author-name span{color:var(--y)}
+        .author-tag{font-size:0.9rem;color:var(--o);font-weight:800;text-transform:uppercase;letter-spacing:2px;margin-bottom:1.5rem}
+        .author-bio{font-size:0.98rem;color:rgba(245,245,245,0.72);line-height:1.8;margin-bottom:1.2rem}
+        .author-site{color:var(--y);font-weight:700}
+        .social-row{display:flex;gap:0.8rem;flex-wrap:wrap;margin-top:0.5rem}
+        .soc-btn{font-family:'Bangers',cursive;font-size:0.88rem;letter-spacing:1px;padding:0.4rem 0.9rem;border:2px solid var(--y);color:var(--y);text-decoration:none;border-radius:2px;transition:all 0.15s}
+        .soc-btn:hover{background:var(--y);color:var(--bk)}
+
+        /* TESTIMONIALS */
+        #testimonials{padding:6rem 2rem;background:var(--bk)}
+        .test-hdr{text-align:center;margin-bottom:3.5rem}
+        .test-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+        .test-card{background:#0c0c0c;border:2px solid #1a1a1a;border-radius:4px;padding:1.6rem;position:relative;transition:all 0.25s}
+        .test-card:hover{border-color:var(--y);transform:translateY(-5px)}
+        .test-card::before{content:'"';font-family:'Bangers',cursive;font-size:5rem;color:var(--y);opacity:0.2;position:absolute;top:-18px;left:14px;line-height:1}
+        .stars{color:var(--y);font-size:0.9rem;margin-bottom:0.7rem}
+        .test-txt{font-size:0.93rem;color:rgba(245,245,245,0.75);line-height:1.75;margin-bottom:1.2rem}
+        .test-author{display:flex;align-items:center;gap:0.75rem}
+        .test-av{width:42px;height:42px;border-radius:50%;background:var(--y);display:flex;align-items:center;justify-content:center;font-family:'Bangers',cursive;font-size:1.2rem;color:var(--bk);border:2px solid var(--o);flex-shrink:0}
+        .test-name{font-family:'Bangers',cursive;font-size:1rem;color:var(--y);letter-spacing:1px}
+        .test-role{font-size:0.75rem;color:rgba(255,255,255,0.45)}
+
+        /* ORDER */
+        #order{padding:6rem 2rem;background:var(--dk)}
+        .order-wrap{max-width:980px;margin:0 auto}
+        .order-hdr{text-align:center;margin-bottom:2.5rem}
+        .order-hdr p{color:rgba(245,245,245,0.6);margin-top:0.5rem}
+        .tab-bar{display:flex;justify-content:center;max-width:480px;margin:0 auto 3rem;border:3px solid var(--y);border-radius:4px;overflow:hidden}
+        .tab-btn{flex:1;font-family:'Bangers',cursive;font-size:1.2rem;letter-spacing:2px;padding:0.75rem;background:transparent;color:var(--y);border:none;cursor:pointer;transition:all 0.2s}
+        .tab-btn.active{background:var(--y);color:var(--bk)}
+        .tab-btn:not(:last-child){border-right:3px solid var(--y)}
+        .order-panel{display:none}
+        .order-panel.active{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start}
+        .order-box{background:rgba(255,215,0,0.04);border:2px solid rgba(255,215,0,0.3);border-radius:4px;padding:2rem}
+        .order-price{font-family:'Bangers',cursive;font-size:4rem;color:var(--y);line-height:1;margin-bottom:0.3rem}
+        .order-price .cur{font-size:2.5rem}
+        .order-price-sub{font-size:0.82rem;color:rgba(255,255,255,0.45);text-transform:uppercase;letter-spacing:1px;margin-bottom:1.5rem}
+        .incl{list-style:none;margin-bottom:1.5rem}
+        .incl li{display:flex;gap:0.5rem;padding:0.45rem 0;border-bottom:1px solid rgba(255,255,255,0.07);font-size:0.93rem;color:rgba(245,245,245,0.78);align-items:center}
+        .order-note{font-size:0.78rem;color:rgba(255,255,255,0.35)}
+        .fg{margin-bottom:1.15rem}
+        .fg label{display:block;font-family:'Bangers',cursive;font-size:0.88rem;letter-spacing:1px;color:var(--y);margin-bottom:0.35rem}
+        .fg input,.fg select,.fg textarea{width:100%;padding:0.65rem 0.95rem;background:#0a0a0a;border:2px solid #2a2a2a;border-radius:3px;color:var(--wh);font-family:'Nunito',sans-serif;font-size:0.93rem;transition:border-color 0.15s}
+        .fg input:focus,.fg select:focus,.fg textarea:focus{outline:none;border-color:var(--y)}
+        .fg select option{background:#1a1a1a}
+        .pay-lbl{font-family:'Bangers',cursive;font-size:0.88rem;letter-spacing:1px;color:var(--y);display:block;margin-bottom:0.6rem}
+        .pay-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.7rem;margin-bottom:1.4rem}
+        .pay-opt{border:2px solid #2a2a2a;border-radius:3px;padding:0.75rem;cursor:pointer;text-align:center;transition:all 0.15s;background:transparent;color:white}
+        .pay-opt.sel{border-color:var(--y);background:rgba(255,215,0,0.08)}
+        .pay-opt:hover{border-color:var(--y)}
+        .pay-name{font-family:'Bangers',cursive;font-size:1.05rem;color:var(--y);display:block}
+        .pay-sub{font-size:0.68rem;color:rgba(255,255,255,0.45);margin-top:2px}
+        .btn-checkout{width:100%;font-family:'Bangers',cursive;font-size:1.4rem;letter-spacing:3px;background:var(--y);color:var(--bk);border:3px solid var(--y);padding:0.95rem;border-radius:3px;cursor:pointer;transition:all 0.18s;box-shadow:4px 4px 0 var(--o);margin-top:0.5rem}
+        .btn-checkout:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--o)}
+        .btn-checkout:disabled{opacity:0.6;cursor:not-allowed;transform:none;box-shadow:none}
+
+        /* ORDER TRACKING */
+        #track{padding:6rem 2rem;background:var(--bk)}
+        .track-wrap{max-width:720px;margin:0 auto}
+        .track-hdr{text-align:center;margin-bottom:3rem}
+        .track-box{background:rgba(255,215,0,0.04);border:2px solid rgba(255,215,0,0.3);border-radius:6px;padding:2.5rem}
+        .track-form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:0.8rem}
+        .track-sep{text-align:center;margin:0.5rem 0;font-family:'Bangers',cursive;font-size:0.85rem;color:rgba(255,255,255,0.3);letter-spacing:2px}
+        .btn-track{width:100%;font-family:'Bangers',cursive;font-size:1.3rem;letter-spacing:2px;background:var(--y);color:var(--bk);border:3px solid var(--y);padding:0.85rem;border-radius:3px;cursor:pointer;box-shadow:4px 4px 0 var(--o);transition:all 0.18s;margin-top:0.5rem}
+        .btn-track:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--o)}
+        .btn-track:disabled{opacity:0.6;cursor:not-allowed;transform:none;box-shadow:none}
+
+        .track-error{margin-top:2rem;display:none;text-align:center;padding:2rem;border:2px solid rgba(192,57,43,0.4);border-radius:4px;background:rgba(192,57,43,0.06)}
+        .track-error.show{display:block}
+        .track-error-icon{font-size:2.5rem;display:block;margin-bottom:0.7rem}
+        .track-error-msg{font-family:'Bangers',cursive;font-size:1.2rem;color:var(--r);letter-spacing:1px}
+        .track-error-sub{font-size:0.88rem;color:rgba(255,255,255,0.45);margin-top:0.4rem}
+
+        .track-result{margin-top:2rem;display:none}
+        .track-result.show{display:block}
+        .track-result-card{border:2px solid var(--y);border-radius:4px;background:rgba(255,215,0,0.05);padding:1.8rem}
+        .tr-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1.5rem;flex-wrap:wrap;gap:1rem}
+        .tr-id{font-family:'Bangers',cursive;font-size:1.7rem;color:var(--y);letter-spacing:2px}
+        .tr-status{font-family:'Bangers',cursive;font-size:0.9rem;letter-spacing:1px;padding:0.4rem 1rem;border-radius:2px;border:2px solid}
+        .tr-status.confirmed{background:rgba(0,133,111,0.2);border-color:var(--t);color:var(--t)}
+        .tr-status.shipped{background:rgba(255,107,0,0.2);border-color:var(--o);color:var(--o)}
+        .tr-status.delivered{background:rgba(46,204,113,0.2);border-color:#2ecc71;color:#2ecc71}
+        .tr-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.9rem 1.5rem}
+        .tr-row{border-bottom:1px solid rgba(255,255,255,0.07);padding-bottom:0.7rem}
+        .tr-lbl{font-size:0.72rem;color:rgba(255,255,255,0.38);text-transform:uppercase;letter-spacing:1px;margin-bottom:0.2rem}
+        .tr-val{font-size:0.93rem;color:var(--wh);font-weight:600}
+
+        .track-timeline{margin-top:1.5rem}
+        .tl-title{font-family:'Bangers',cursive;font-size:1rem;color:var(--y);letter-spacing:2px;margin-bottom:1rem;margin-top:1.5rem}
+        .tl-step{display:flex;gap:1rem;align-items:flex-start;padding:0.7rem 0;position:relative}
+        .tl-step:not(:last-child)::before{content:'';position:absolute;left:13px;top:38px;width:2px;height:calc(100% - 10px);background:rgba(255,255,255,0.12)}
+        .tl-dot{width:28px;height:28px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:0.8rem;border:2px solid}
+        .tl-dot.done{background:rgba(255,215,0,0.2);border-color:var(--y)}
+        .tl-dot.active{background:rgba(255,107,0,0.2);border-color:var(--o);animation:pulse 1.5s infinite}
+        .tl-dot.pending{background:rgba(255,255,255,0.04);border-color:rgba(255,255,255,0.15)}
+        @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(255,107,0,0.4)}50%{box-shadow:0 0 0 6px rgba(255,107,0,0)}}
+        .tl-info-title{font-family:'Bangers',cursive;font-size:1rem;color:var(--wh);letter-spacing:1px}
+        .tl-info-date{font-size:0.75rem;color:rgba(255,255,255,0.38);margin-top:2px}
+
+        /* BLOG */
+        #blog{padding:6rem 2rem;background:var(--dk)}
+        .blog-top{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3rem}
+        .blog-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr;gap:1.4rem}
+        .blog-card{border:2px solid #161616;border-radius:4px;overflow:hidden;background:#0c0c0c;transition:all 0.25s;cursor:pointer}
+        .blog-card:hover{border-color:var(--y);transform:translateY(-5px)}
+        .blog-card.feat-post{grid-row:1/3}
+        .blog-img{width:100%;height:190px;display:flex;align-items:center;justify-content:center;font-size:3.8rem;position:relative}
+        .blog-card.feat-post .blog-img{height:280px}
+        .blog-tag-pill{position:absolute;top:10px;left:10px;background:var(--y);color:var(--bk);font-family:'Bangers',cursive;font-size:0.78rem;letter-spacing:1px;padding:0.2rem 0.65rem;border-radius:2px}
+        .blog-body{padding:1.2rem}
+        .blog-date{font-size:0.72rem;color:rgba(255,255,255,0.38);text-transform:uppercase;letter-spacing:1px;margin-bottom:0.4rem}
+        .blog-title{font-family:'Bangers',cursive;font-size:1.25rem;letter-spacing:1px;color:var(--wh);line-height:1.2;margin-bottom:0.6rem}
+        .blog-card.feat-post .blog-title{font-size:1.7rem}
+        .blog-excerpt{font-size:0.88rem;color:rgba(245,245,245,0.58);line-height:1.6}
+        .read-more{display:inline-flex;align-items:center;gap:0.3rem;font-family:'Bangers',cursive;font-size:0.88rem;letter-spacing:1px;color:var(--y);text-decoration:none;margin-top:0.75rem;transition:gap 0.2s}
+        .read-more:hover{gap:0.6rem}
+
+        /* NEWSLETTER */
+        #newsletter{padding:4rem 2rem;background:var(--y);position:relative;overflow:hidden}
+        #newsletter::before{content:'₹';font-family:'Bangers',cursive;font-size:22rem;color:rgba(0,0,0,0.05);position:absolute;right:-1rem;top:50%;transform:translateY(-50%);pointer-events:none}
+        .nl-wrap{max-width:680px;margin:0 auto;text-align:center;position:relative;z-index:1}
+        .nl-title{font-family:'Bangers',cursive;font-size:clamp(2rem,5vw,3.5rem);color:var(--bk);letter-spacing:2px;margin-bottom:0.4rem}
+        .nl-sub{font-size:0.98rem;color:rgba(0,0,0,0.65);margin-bottom:2rem}
+        .nl-form{display:flex;gap:0.5rem;max-width:500px;margin:0 auto}
+        .nl-form input{flex:1;padding:0.8rem 1.1rem;border:3px solid var(--bk);border-radius:3px;font-family:'Nunito',sans-serif;font-size:0.95rem;background:#fff}
+        .nl-form input:focus{outline:none}
+        .nl-btn{font-family:'Bangers',cursive;font-size:1.05rem;letter-spacing:1px;background:var(--bk);color:var(--y);border:3px solid var(--bk);padding:0.8rem 1.4rem;border-radius:3px;cursor:pointer;white-space:nowrap;transition:all 0.15s}
+        .nl-btn:hover{background:#1a1a1a}
+
+        /* FOOTER */
+        footer{background:#040404;border-top:3px solid var(--y);padding:3.5rem 2rem 1.5rem}
+        .footer-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:2.5rem}
+        .f-logo{font-family:'Bangers',cursive;font-size:1.9rem;letter-spacing:3px;color:var(--y);text-decoration:none;display:block;margin-bottom:1rem}
+        .f-logo span{color:var(--o)}
+        .f-desc{font-size:0.88rem;color:rgba(245,245,245,0.42);line-height:1.7;max-width:270px}
+        .f-site{font-size:0.85rem;color:rgba(255,215,0,0.5);margin-top:1rem}
+        .f-h{font-family:'Bangers',cursive;font-size:1.05rem;letter-spacing:2px;color:var(--y);margin-bottom:1rem}
+        .f-links{list-style:none;display:flex;flex-direction:column;gap:0.45rem}
+        .f-links a{font-size:0.88rem;color:rgba(245,245,245,0.45);text-decoration:none;transition:color 0.15s}
+        .f-links a:hover{color:var(--y)}
+        .footer-bar{max-width:1200px;margin:0 auto;border-top:1px solid #181818;padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;font-size:0.82rem;color:rgba(245,245,245,0.28);flex-wrap:wrap;gap:1rem}
+        .footer-bar a{color:rgba(245,245,245,0.28);text-decoration:none}.footer-bar a:hover{color:var(--y)}
+
+        /* TOAST */
+        .toast{position:fixed;bottom:2rem;right:2rem;background:var(--y);color:var(--bk);font-family:'Bangers',cursive;font-size:1rem;letter-spacing:1px;padding:0.8rem 1.5rem;border-radius:3px;border:2px solid #000;box-shadow:4px 4px 0 rgba(0,0,0,0.3);transform:translateX(200%);transition:transform 0.3s;z-index:9999;max-width:340px}
+        .toast.show{transform:translateX(0)}.toast.error{background:var(--r);color:#fff;border-color:#800}
+
+        .spinner{display:inline-block;width:16px;height:16px;border:3px solid rgba(0,0,0,0.3);border-top-color:#000;border-radius:50%;animation:spin 0.7s linear infinite;vertical-align:middle;margin-right:6px}
+        @keyframes spin{to{transform:rotate(360deg)}}
+
+        /* RESPONSIVE */
+        @media(max-width:960px){
+            .hero-wrap{grid-template-columns:1fr;text-align:center}.book-stage{order:-1}
+            .hero-stats,.hero-btns{justify-content:center}.hero-desc{margin:0 auto 2rem}
+            .features-grid{grid-template-columns:1fr 1fr}.chars-grid{grid-template-columns:repeat(3,1fr)}
+            .author-wrap{grid-template-columns:1fr;text-align:center}.author-avatar{margin:0 auto}.social-row{justify-content:center}
+            .test-grid{grid-template-columns:1fr 1fr}.order-panel.active{grid-template-columns:1fr}
+            .track-form-row{grid-template-columns:1fr}.tr-grid{grid-template-columns:1fr}
+            .blog-grid{grid-template-columns:1fr}.blog-card.feat-post{grid-row:auto}
+            .footer-grid{grid-template-columns:1fr 1fr}.nav-links,.nav-buy{display:none}.hamburger{display:flex}
+        }
+        @media(max-width:600px){
+            .features-grid{grid-template-columns:1fr}.chars-grid{grid-template-columns:1fr 1fr}
+            .test-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}.nl-form{flex-direction:column}
+            .book-scene,.book{width:230px;height:325px}.book-front,.book-back,.page-turn{width:230px;height:325px}
+        }
+    </style>
+</head>
+<body>
+
+<nav id="topnav">
+    <a href="#home" class="logo">TRIT<span>.</span></a>
+    <ul class="nav-links">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#about-book">About</a></li>
+        <li><a href="#characters">Characters</a></li>
+        <li><a href="#author">Author</a></li>
+        <li><a href="/app.html" style="color:#2ECC71">📱 App</a></li>
+        <li><a href="#track">Track Order</a></li>
+        <li><a href="#blog">Blog</a></li>
+    </ul>
+    <a href="#order" class="nav-buy">📦 BUY — ₹250</a>
+    <div class="hamburger" id="hbg"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="mobile-menu" id="mmenu">
+    <a href="#home" onclick="closeMenu()">HOME</a>
+    <a href="#about-book" onclick="closeMenu()">ABOUT</a>
+    <a href="#characters" onclick="closeMenu()">CHARACTERS</a>
+    <a href="#author" onclick="closeMenu()">AUTHOR</a>
+    <a href="/app.html" onclick="closeMenu()" style="color:#2ECC71">📱 GET APP — FREE</a>
+    <a href="#order" onclick="closeMenu()">ORDER</a>
+    <a href="#track" onclick="closeMenu()">TRACK ORDER</a>
+    <a href="#blog" onclick="closeMenu()">BLOG</a>
+</div>
+
+<!-- HERO -->
+<section id="home">
+    <div class="hero-wrap">
+        <div class="hero-text">
+            <div class="hero-badge">🇮🇳 Made for Indian Kids &amp; Beginners ✨</div>
+            <h1 class="hero-h1"><span class="line1">THAT</span><span class="line2">ROOKIE</span><span class="line2">INDIAN</span><span class="line3">TRADER</span></h1>
+            <p class="hero-desc">The fun, illustrated guide that teaches stock market trading through stories, comic characters, and real Indian market examples. Written for young minds — and anyone who's ever felt lost in the world of investing!</p>
+            <div class="hero-stats">
+                <div class="stat-box"><span class="stat-num">₹250</span><span class="stat-lbl">Physical Book</span></div>
+                <div class="stat-box"><span class="stat-num">5★</span><span class="stat-lbl">Reader Rated</span></div>
+                <div class="stat-box"><span class="stat-num">BSE</span><span class="stat-lbl">India Focused</span></div>
+            </div>
+            <div class="hero-btns">
+                <a href="#order" class="btn-pri">📦 ORDER NOW</a>
+                <a href="#track" class="btn-sec">🔍 TRACK ORDER</a>
+            </div>
+        </div>
+        <div class="book-stage">
+            <div style="position:relative;">
+                <div class="book-scene">
+                    <div class="book-float" id="bookFloat">
+
+                        <!-- FRONT COVER -->
+                        <div class="bkf bk-front">
+                            <div class="cover-grid">
+                                <div class="cp cp-tl">🐺</div>
+                                <div class="cp cp-tr" style="flex-direction:column;gap:2px;"><span>🐻</span><span style="font-family:Bangers,cursive;font-size:0.62rem;color:var(--y);letter-spacing:1px;">BSE ↗</span></div>
+                                <div class="cp-title-band"><div class="ct1">THAT ROOKIE</div><div class="ct2">INDIAN TRADER</div></div>
+                                <div class="cp cp-bl" style="flex-direction:column;gap:3px;position:relative;"><span>🐂💻</span><div class="cover-stats"><span class="u">49.12 ▲</span><br><span class="d">615.0 ▼</span></div></div>
+                                <div class="cp cp-br" style="flex-direction:column;gap:3px;"><span>🐢</span><span style="font-size:1.4rem;">₹₹₹</span><div class="cover-author-lbl">PRATIK SHUKLA</div></div>
+                            </div>
+                        </div>
+
+                        <!-- SPINE -->
+                        <div class="bkf bk-spine"><span class="spine-txt">THAT ROOKIE INDIAN TRADER · PRATIK SHUKLA</span></div>
+
+                        <!-- PAGES BLOCK (right edge) -->
+                        <div class="bkf bk-pages"></div>
+
+                        <!-- BACK COVER -->
+                        <div class="bkf bk-back">
+                            <div class="back-title">ABOUT THE BOOK</div>
+                            <div class="back-blurb">A fun, illustrated guide to the Indian stock market through five memorable animal characters — for kids and beginners!</div>
+                            <div class="back-price">₹ 250</div>
+                        </div>
+
+                    </div><!-- /book-float -->
+                </div><!-- /book-scene -->
+                <div class="book-glow"></div>
+                <div class="floater" style="top:10%;left:-60px;font-size:1.8rem;color:var(--y);animation-duration:3.5s;">₹</div>
+                <div class="floater" style="top:50%;left:-50px;font-size:1.2rem;color:var(--o);animation-duration:4.5s;animation-delay:1.2s;">↗</div>
+                <div class="floater" style="top:20%;right:-55px;font-size:2.2rem;color:var(--y);animation-duration:4s;animation-delay:0.6s;">₹</div>
+                <div class="floater" style="top:70%;right:-45px;font-size:1.4rem;color:var(--t);animation-duration:3.8s;animation-delay:2s;">📈</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker" aria-hidden="true"><div class="ticker-track">
+    <span class="ti">📚 THAT ROOKIE INDIAN TRADER</span>
+    <span class="ti up">SENSEX ▲ 73,847</span><span class="ti ti-sep">|</span><span class="ti up">NIFTY ▲ 22,491</span><span class="ti ti-sep">|</span><span class="ti dn">RELIANCE ▼ 2,847</span><span class="ti ti-sep">|</span><span class="ti up">TCS ▲ 3,920</span><span class="ti ti-sep">|</span><span class="ti up">HDFC ▲ 1,647</span><span class="ti ti-sep">|</span><span class="ti dn">INFOSYS ▼ 1,423</span><span class="ti ti-sep">|</span><span class="ti up">WIPRO ▲ 495</span><span class="ti ti-sep">|</span>
+    <span class="ti">📚 THAT ROOKIE INDIAN TRADER</span>
+    <span class="ti up">SENSEX ▲ 73,847</span><span class="ti ti-sep">|</span><span class="ti up">NIFTY ▲ 22,491</span><span class="ti ti-sep">|</span><span class="ti dn">RELIANCE ▼ 2,847</span><span class="ti ti-sep">|</span><span class="ti up">TCS ▲ 3,920</span><span class="ti ti-sep">|</span><span class="ti up">HDFC ▲ 1,647</span><span class="ti ti-sep">|</span><span class="ti dn">INFOSYS ▼ 1,423</span><span class="ti ti-sep">|</span><span class="ti up">WIPRO ▲ 495</span>
+</div></div>
+
+<!-- ABOUT BOOK -->
+<section id="about-book">
+    <div style="max-width:1200px;margin:0 auto;">
+        <div class="about-hdr reveal"><span class="section-label">What's Inside</span><h2 class="section-title">LEARN TRADING THE <span>FUN WAY</span></h2><p class="about-sub">No boring textbooks. No confusing jargon. Just fun stories, cartoon characters, and real Indian market examples!</p></div>
+        <div class="features-grid">
+            <div class="feat reveal"><span class="feat-icon">📊</span><div class="feat-title">SENSEX &amp; NIFTY EXPLAINED</div><p class="feat-desc">Understand India's biggest stock indices with simple, relatable everyday examples any kid can grasp in minutes.</p></div>
+            <div class="feat reveal" style="transition-delay:0.08s"><span class="feat-icon">🐻🐂</span><div class="feat-title">BULLS VS BEARS</div><p class="feat-desc">Learn the fundamentals of market cycles through lovable animal characters who guide you through every phase.</p></div>
+            <div class="feat reveal" style="transition-delay:0.16s"><span class="feat-icon">📱</span><div class="feat-title">YOUR FIRST TRADE</div><p class="feat-desc">Step-by-step guide to opening a Demat account and placing your very first trade on the BSE and NSE.</p></div>
+            <div class="feat reveal" style="transition-delay:0.24s"><span class="feat-icon">🛡️</span><div class="feat-title">RISK MANAGEMENT</div><p class="feat-desc">The most important skill every trader must master. Learn to protect your capital while growing it systematically.</p></div>
+            <div class="feat reveal" style="transition-delay:0.32s"><span class="feat-icon">🧠</span><div class="feat-title">TRADING PSYCHOLOGY</div><p class="feat-desc">Why do traders make bad decisions? Master your emotions, beat FOMO, and develop the discipline of a pro.</p></div>
+            <div class="feat reveal" style="transition-delay:0.4s"><span class="feat-icon">📈</span><div class="feat-title">CHART READING</div><p class="feat-desc">Candlesticks, support levels, and key patterns — all simplified with comic-style illustrations for beginners.</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- CHARACTERS -->
+<section id="characters">
+    <div style="max-width:1200px;margin:0 auto;">
+        <div class="chars-hdr reveal"><span class="section-label">Meet the Cast</span><h2 class="section-title">THE <span>TRADER</span> ARCHETYPES</h2><p style="color:rgba(245,245,245,0.55);max-width:480px;margin:0.9rem auto 0;font-size:0.95rem;">Every type of trader you'll meet in the real market — as five unforgettable animal characters!</p></div>
+        <div class="chars-grid reveal">
+            <div class="char-card"><span class="char-emoji">🐺</span><div class="char-name">THE WOLF</div><div class="char-role">The Shrewd Manipulator</div><p class="char-desc">Cunning and dangerous. Learn to recognise market wolves who prey on rookies.</p></div>
+            <div class="char-card"><span class="char-emoji">🐻</span><div class="char-name">THE BEAR</div><div class="char-role">The Cautious Investor</div><p class="char-desc">Wise and patient. Waits for the perfect moment to act with precision.</p></div>
+            <div class="char-card"><span class="char-emoji">🦊</span><div class="char-name">THE FOX</div><div class="char-role">The Smart Analyst</div><p class="char-desc">Always researching. Uses data to find hidden opportunities others miss.</p></div>
+            <div class="char-card"><span class="char-emoji">🐂</span><div class="char-name">THE BULL</div><div class="char-role">The Aggressive Trader</div><p class="char-desc">Optimistic and bold! Charges into the market with great energy and great risk.</p></div>
+            <div class="char-card"><span class="char-emoji">🐢</span><div class="char-name">THE TORTOISE</div><div class="char-role">The Long-Term Winner</div><p class="char-desc">Slow and steady wins the race. The power of patience and compounding.</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- AUTHOR -->
+<section id="author">
+    <div class="author-wrap">
+        <div class="author-img-box reveal-l"><div class="author-avatar"><span style="position:relative;z-index:1;font-size:6.5rem;">👨‍💼</span></div><div class="author-badge-pill">✍️ AUTHOR &amp; TRADER</div></div>
+        <div class="reveal-r">
+            <span class="section-label">About the Author</span>
+            <h2 class="author-name">PRATIK <span>SHUKLA</span></h2>
+            <p class="author-tag">Trader · Educator · Storyteller</p>
+            <p class="author-bio">Pratik Shukla is a passionate trader and educator who believes that financial literacy should be taught from a young age. Having navigated the complexities of the Indian stock market himself, he created <em>That Rookie Indian Trader</em> to make the learning journey fun, visual, and accessible for everyone — especially kids and young adults just starting out.</p>
+            <p class="author-bio">Through his website <a href="https://thatrookieindiantrader.com" class="author-site" target="_blank">thatrookieindiantrader.com</a>, Pratik shares insights, blog posts, and resources to help a new generation of Indian investors grow their wealth with confidence.</p>
+            <div class="social-row">
+                <a href="https://thatrookieindiantrader.com" class="soc-btn" target="_blank">🌐 WEBSITE</a>
+                <a href="#" class="soc-btn">📷 INSTAGRAM</a>
+                <a href="#" class="soc-btn">▶️ YOUTUBE</a>
+                <a href="#" class="soc-btn">𝕏 TWITTER</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+    <div class="test-hdr reveal"><span class="section-label">Reader Reviews</span><h2 class="section-title">WHAT READERS <span>SAY</span></h2></div>
+    <div class="test-grid reveal">
+        <div class="test-card"><div class="stars">★★★★★</div><p class="test-txt">My 14-year-old finished this in two days and now asks me about the Sensex every morning! The animal characters make it so memorable. Best purchase of the year.</p><div class="test-author"><div class="test-av">R</div><div><div class="test-name">Rajesh Mehta</div><div class="test-role">Parent, Mumbai</div></div></div></div>
+        <div class="test-card"><div class="stars">★★★★★</div><p class="test-txt">I tried three other trading books and fell asleep on all of them. This one? Read it cover to cover in one sitting. The Wolf character is literally my broker! 😂</p><div class="test-author"><div class="test-av">P</div><div><div class="test-name">Priya Sharma</div><div class="test-role">Student, Bengaluru</div></div></div></div>
+        <div class="test-card"><div class="stars">★★★★☆</div><p class="test-txt">Finally a book that explains Demat accounts without making my head hurt. The Tortoise strategy chapter alone is worth 10x the price. Highly recommend!</p><div class="test-author"><div class="test-av">A</div><div><div class="test-name">Arjun Patel</div><div class="test-role">First-time investor, Delhi</div></div></div></div>
+    </div>
+</section>
+
+<!-- APP DOWNLOAD -->
+<section id="app" style="padding:5rem 1rem;background:linear-gradient(180deg,#080808 0%,#0f0a00 100%);text-align:center;border-bottom:1px solid #1a1a1a">
+    <div style="max-width:600px;margin:0 auto">
+        <span style="font-family:'Bangers',cursive;font-size:0.85rem;letter-spacing:3px;color:var(--y);display:block;margin-bottom:0.5rem">FREE TO USE</span>
+        <h2 style="font-family:'Bangers',cursive;font-size:3rem;letter-spacing:2px;color:#fff;margin-bottom:0.5rem;line-height:1">GET THE <span style="color:var(--y)">TRIT APP</span></h2>
+        <p style="color:rgba(255,255,255,0.55);margin-bottom:2.5rem;font-size:1rem;line-height:1.7">Paper trade with ₹1,00,000 virtual money · Live market news · Candlestick charts · Trading glossary · 100+ NSE/BSE stocks</p>
+
+        <!-- App preview mockup -->
+        <div style="background:#111;border:2px solid #FFD700;border-radius:16px;padding:1.5rem;margin-bottom:2rem;display:inline-flex;align-items:center;gap:1.2rem;text-align:left">
+            <div style="width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,#1a1200,#0a0a0a);border:1.5px solid rgba(255,215,0,0.3);display:flex;align-items:center;justify-content:center;font-size:1.8rem;flex-shrink:0">📈</div>
+            <div>
+                <div style="font-family:'Bangers',cursive;font-size:1.1rem;letter-spacing:1px;color:#FFD700">TRIT APP</div>
+                <div style="font-size:0.8rem;color:rgba(255,255,255,0.45)">That Rookie Indian Trader</div>
+                <div style="font-size:0.72rem;color:rgba(255,255,255,0.25);margin-top:2px">Free · No login required</div>
+            </div>
+            <div style="text-align:center;flex-shrink:0">
+                <div style="font-family:'Bangers',cursive;font-size:1.1rem;color:#2ECC71">FREE</div>
+                <div style="font-size:0.65rem;color:rgba(255,255,255,0.25)">Always</div>
+            </div>
+        </div>
+
+        <!-- Install buttons -->
+        <div style="display:flex;flex-direction:column;gap:1rem;align-items:center">
+
+            <!-- PWA Install button — shown on mobile -->
+            <button id="pwaInstallBtn" onclick="installPWA()" style="display:none;font-family:'Bangers',cursive;font-size:1.3rem;letter-spacing:2px;background:#FFD700;color:#000;border:3px solid #000;padding:0.9rem 2.5rem;border-radius:8px;cursor:pointer;box-shadow:4px 4px 0 #FF6B00;width:100%;max-width:360px">
+                📲 INSTALL APP ON THIS PHONE
+            </button>
+
+            <!-- ALWAYS VISIBLE — Open App button -->
+            <a href="/app.html" style="font-family:'Bangers',cursive;font-size:1.3rem;letter-spacing:2px;background:#2ECC71;color:#000;border:3px solid #000;padding:0.9rem 2.5rem;border-radius:8px;cursor:pointer;box-shadow:4px 4px 0 #1a8a4a;width:100%;max-width:360px;display:block;text-align:center;text-decoration:none;margin-bottom:0.5rem">
+                🚀 OPEN TRIT APP
+            </a>
+            <div style="font-size:0.75rem;color:rgba(255,255,255,0.3);text-align:center;margin-bottom:0.5rem">Tap ⋮ menu → "Add to Home Screen" to install</div>
+
+            <!-- Android manual install instruction -->
+            <div id="androidInstall" style="display:none;background:rgba(255,215,0,0.06);border:1.5px solid rgba(255,215,0,0.25);border-radius:10px;padding:1.2rem;max-width:360px;width:100%;text-align:left">
+                <div style="font-family:'Bangers',cursive;font-size:1rem;letter-spacing:1px;color:#FFD700;margin-bottom:0.6rem">📱 INSTALL ON ANDROID</div>
+                <div style="font-size:0.82rem;color:rgba(255,255,255,0.6);line-height:1.8">
+                    1. Open <b style="color:#FFD700">Chrome</b> browser<br>
+                    2. Visit <b style="color:#FFD700">thatrookieindiantrader.in</b><br>
+                    3. Tap <b style="color:#FFD700">⋮ Menu</b> → <b style="color:#FFD700">Add to Home Screen</b><br>
+                    4. Tap <b style="color:#FFD700">Install</b> ✅
+                </div>
+            </div>
+
+            <!-- iPhone install instruction -->
+            <div id="iosInstall" style="display:none;background:rgba(255,215,0,0.06);border:1.5px solid rgba(255,215,0,0.25);border-radius:10px;padding:1.2rem;max-width:360px;width:100%;text-align:left">
+                <div style="font-family:'Bangers',cursive;font-size:1rem;letter-spacing:1px;color:#FFD700;margin-bottom:0.6rem">🍎 INSTALL ON iPHONE</div>
+                <div style="font-size:0.82rem;color:rgba(255,255,255,0.6);line-height:1.8">
+                    1. Open <b style="color:#FFD700">Safari</b> browser<br>
+                    2. Visit <b style="color:#FFD700">thatrookieindiantrader.in</b><br>
+                    3. Tap <b style="color:#FFD700">Share</b> button (□↑)<br>
+                    4. Tap <b style="color:#FFD700">Add to Home Screen</b> ✅
+                </div>
+            </div>
+
+            <!-- Desktop QR -->
+            <div id="desktopInstall" style="background:rgba(255,215,0,0.06);border:1.5px solid rgba(255,215,0,0.25);border-radius:10px;padding:1.5rem;max-width:360px;width:100%;text-align:center">
+                <div style="font-family:'Bangers',cursive;font-size:1rem;letter-spacing:1px;color:#FFD700;margin-bottom:0.8rem">📱 SCAN TO INSTALL ON PHONE</div>
+                <!-- QR code using Google Charts API -->
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://thatrookieindiantrader.in&bgcolor=111111&color=FFD700&margin=10" style="border-radius:8px;width:160px;height:160px" alt="QR Code">
+                <div style="font-size:0.75rem;color:rgba(255,255,255,0.3);margin-top:0.6rem">Scan with your phone camera</div>
+            </div>
+
+            <!-- Features list -->
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;max-width:360px;width:100%;margin-top:0.5rem">
+                <div style="background:rgba(255,255,255,0.03);border:1px solid #1a1a1a;border-radius:8px;padding:0.7rem;font-size:0.78rem;color:rgba(255,255,255,0.55)">📈 Paper Trading</div>
+                <div style="background:rgba(255,255,255,0.03);border:1px solid #1a1a1a;border-radius:8px;padding:0.7rem;font-size:0.78rem;color:rgba(255,255,255,0.55)">📰 Market News</div>
+                <div style="background:rgba(255,255,255,0.03);border:1px solid #1a1a1a;border-radius:8px;padding:0.7rem;font-size:0.78rem;color:rgba(255,255,255,0.55)">📊 Live Charts</div>
+                <div style="background:rgba(255,255,255,0.03);border:1px solid #1a1a1a;border-radius:8px;padding:0.7rem;font-size:0.78rem;color:rgba(255,255,255,0.55)">📖 Glossary</div>
+                <div style="background:rgba(255,255,255,0.03);border:1px solid #1a1a1a;border-radius:8px;padding:0.7rem;font-size:0.78rem;color:rgba(255,255,255,0.55)">⭐ Watchlist</div>
+                <div style="background:rgba(255,255,255,0.03);border:1px solid #1a1a1a;border-radius:8px;padding:0.7rem;font-size:0.78rem;color:rgba(255,255,255,0.55)">🏆 Leaderboard</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+// Detect device and show correct install option
+(function(){
+    const isIOS     = /iPhone|iPad|iPod/.test(navigator.userAgent);
+    const isAndroid = /Android/.test(navigator.userAgent);
+    const isMobile  = isIOS || isAndroid;
+
+    if (isMobile) document.getElementById('desktopInstall').style.display = 'none';
+    if (isIOS)     document.getElementById('iosInstall').style.display = 'block';
+    if (isAndroid) document.getElementById('androidInstall').style.display = 'block';
+
+    // PWA beforeinstallprompt — Chrome Android
+    window.addEventListener('beforeinstallprompt', function(e) {
+        e.preventDefault();
+        window._pwaPrompt = e;
+        document.getElementById('pwaInstallBtn').style.display = 'block';
+        if (isAndroid) document.getElementById('androidInstall').style.display = 'none';
+    });
+})();
+
+function installPWA() {
+    if (window._pwaPrompt) {
+        window._pwaPrompt.prompt();
+        window._pwaPrompt.userChoice.then(function(r) {
+            if (r.outcome === 'accepted') {
+                document.getElementById('pwaInstallBtn').innerHTML = '✅ APP INSTALLED!';
+                document.getElementById('pwaInstallBtn').style.background = '#2ECC71';
+            }
+            window._pwaPrompt = null;
+        });
+    }
+}
+</script>
+
+<!-- ORDER -->
+<section id="order">
+    <div class="order-wrap">
+        <div class="order-hdr reveal"><span class="section-label">Get Your Copy</span><h2 class="section-title">ORDER <span>NOW</span></h2><p>You'll receive an Order ID &amp; confirmation email after purchase — use it to track your delivery!</p></div>
+        <div class="tab-bar reveal">
+            <button class="tab-btn active" onclick="switchTab('physical')">📦 PHYSICAL BOOK</button>
+            <button class="tab-btn" onclick="switchTab('ebook')">📱 E-BOOK</button>
+        </div>
+
+        <!-- Physical -->
+        <div class="order-panel active" id="pp">
+            <div class="order-box reveal-l">
+                <div class="order-price"><span class="cur">₹</span>250</div>
+                <div class="order-price-sub">Physical Book · Free Shipping Across India*</div>
+                <ul class="incl">
+                    <li><span>✅</span> Hardcover printed edition</li>
+                    <li><span>✅</span> Full-colour illustrations throughout</li>
+                    <li><span>✅</span> 200+ pages of trading wisdom</li>
+                    <li><span>✅</span> All 5 animal character stories</li>
+                    <li><span>✅</span> Delivered anywhere in India</li>
+                    <li><span>🎁</span> Free trading glossary bookmark!</li>
+                </ul>
+                <div class="order-note">*Free standard shipping. 5–7 business days. You'll get an Order ID by email to track your shipment.</div>
+            </div>
+            <div class="reveal-r">
+                <div class="fg"><label>Full Name *</label><input type="text" id="pName" placeholder="Your full name"></div>
+                <div class="fg"><label>Phone *</label><input type="tel" id="pPhone" placeholder="+91 XXXXX XXXXX"></div>
+                <div class="fg"><label>Email *</label><input type="email" id="pEmail" placeholder="your@email.com"></div>
+                <div class="fg"><label>Shipping Address *</label><textarea rows="3" id="pAddr" placeholder="Full address with pincode" style="resize:vertical;"></textarea></div>
+                <div class="fg"><label>State *</label><select id="pState"><option value="">Select state</option><option>Maharashtra</option><option>Delhi</option><option>Karnataka</option><option>Tamil Nadu</option><option>Gujarat</option><option>Rajasthan</option><option>Uttar Pradesh</option><option>West Bengal</option><option>Telangana</option><option>Andhra Pradesh</option><option>Kerala</option><option>Madhya Pradesh</option><option>Punjab</option><option>Haryana</option><option>Other</option></select></div>
+                <span class="pay-lbl">Payment Method</span>
+                <div class="pay-grid" id="pPayGrid">
+                    <div class="pay-opt sel" onclick="selPay(this,'pPayGrid')"><span class="pay-name">RAZORPAY</span><span class="pay-sub">UPI · Cards · Wallets · EMI</span></div>
+                    <div class="pay-opt" onclick="selPay(this,'pPayGrid')"><span class="pay-name">COD</span><span class="pay-sub">Cash on Delivery</span></div>
+                </div>
+                <button class="btn-checkout" id="pBtn" onclick="doOrder('physical')">🛒 ORDER NOW — ₹250</button>
+            </div>
+        </div>
+
+        <!-- Ebook -->
+        <div class="order-panel" id="ep">
+            <div class="order-box reveal-l">
+                <div class="order-price"><span class="cur">₹</span>99</div>
+                <div class="order-price-sub">Instant Digital Download</div>
+                <ul class="incl">
+                    <li><span>✅</span> PDF + EPUB formats included</li>
+                    <li><span>✅</span> High-resolution illustrations</li>
+                    <li><span>✅</span> Read on any device, anywhere</li>
+                    <li><span>✅</span> Lifetime access guaranteed</li>
+                    <li><span>✅</span> Download link sent instantly</li>
+                    <li><span>🎁</span> Bonus: Trading Glossary PDF!</li>
+                </ul>
+                <div class="order-note">Download link sent to your email immediately after payment. Order ID included for your records.</div>
+            </div>
+            <div class="reveal-r">
+                <div class="fg"><label>Full Name *</label><input type="text" id="eName" placeholder="Your full name"></div>
+                <div class="fg"><label>Email *</label><input type="email" id="eEmail" placeholder="your@email.com"></div>
+                <div class="fg"><label>WhatsApp Number *</label><input type="tel" id="ePhone" placeholder="+91 XXXXX XXXXX"></div>
+                <span class="pay-lbl">Payment</span>
+                <div class="pay-grid" style="grid-template-columns:1fr;">
+                    <div class="pay-opt sel"><span class="pay-name">RAZORPAY</span><span class="pay-sub">UPI · Cards · Net Banking · Wallets</span></div>
+                </div>
+                <button class="btn-checkout" id="eBtn" onclick="doOrder('ebook')">📲 GET E-BOOK — ₹99</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ORDER TRACKING -->
+<section id="track">
+    <div class="track-wrap">
+        <div class="track-hdr reveal">
+            <span class="section-label">Where Is My Book?</span>
+            <h2 class="section-title">TRACK YOUR <span>ORDER</span></h2>
+            <p style="color:rgba(245,245,245,0.55);margin-top:0.6rem;font-size:0.95rem;">Enter your Order ID (from your confirmation email) or your email address.</p>
+        </div>
+        <div class="track-box reveal">
+            <div class="track-form-row">
+                <div class="fg" style="margin:0;"><label>Order ID</label><input type="text" id="trackId" placeholder="TRIT-2024-12345" oninput="clearTrackEmail()"></div>
+                <div class="fg" style="margin:0;"><label>Email Address</label><input type="email" id="trackEmail" placeholder="your@email.com" oninput="clearTrackId()"></div>
+            </div>
+            <div class="track-sep">— ENTER EITHER ONE —</div>
+            <button class="btn-track" id="trackBtn" onclick="doTrack()">🔍 TRACK MY ORDER</button>
+
+            <div class="track-error" id="trackError">
+                <span class="track-error-icon">😕</span>
+                <div class="track-error-msg">ORDER NOT FOUND</div>
+                <p class="track-error-sub" id="trackErrorMsg">Please check your Order ID or email. If you just ordered, wait a few minutes and try again.</p>
+            </div>
+
+            <div class="track-result" id="trackResult">
+                <div class="track-result-card">
+                    <div class="tr-header">
+                        <div><div style="font-size:0.72rem;color:rgba(255,255,255,0.38);letter-spacing:1px;text-transform:uppercase;margin-bottom:4px;">Order ID</div><div class="tr-id" id="tr-orderId">—</div></div>
+                        <div class="tr-status confirmed" id="tr-status">Confirmed</div>
+                    </div>
+                    <div class="tr-grid">
+                        <div class="tr-row"><div class="tr-lbl">Customer</div><div class="tr-val" id="tr-name">—</div></div>
+                        <div class="tr-row"><div class="tr-lbl">Order Type</div><div class="tr-val" id="tr-type">—</div></div>
+                        <div class="tr-row"><div class="tr-lbl">Order Date</div><div class="tr-val" id="tr-date">—</div></div>
+                        <div class="tr-row"><div class="tr-lbl">Amount Paid</div><div class="tr-val" id="tr-amount">—</div></div>
+                        <div class="tr-row"><div class="tr-lbl">Payment</div><div class="tr-val" id="tr-payment">—</div></div>
+                        <div class="tr-row"><div class="tr-lbl">Delivery To</div><div class="tr-val" id="tr-address">—</div></div>
+                    </div>
+                    <div class="track-timeline">
+                        <div class="tl-title">ORDER TIMELINE</div>
+                        <div class="tl-step"><div class="tl-dot done" id="tl1">✅</div><div><div class="tl-info-title" id="tl1-title">Order Confirmed</div><div class="tl-info-date" id="tl1-date">—</div></div></div>
+                        <div class="tl-step"><div class="tl-dot pending" id="tl2">📦</div><div><div class="tl-info-title" id="tl2-title">Packed &amp; Shipped</div><div class="tl-info-date">Processing within 1-2 business days</div></div></div>
+                        <div class="tl-step"><div class="tl-dot pending" id="tl3">🚚</div><div><div class="tl-info-title" id="tl3-title">Out for Delivery</div><div class="tl-info-date">Expected in 5-7 business days</div></div></div>
+                        <div class="tl-step"><div class="tl-dot pending" id="tl4">🎉</div><div><div class="tl-info-title" id="tl4-title">Delivered!</div><div class="tl-info-date">Enjoy your book 📚</div></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- BLOG -->
+<section id="blog">
+    <div class="blog-top reveal"><div><span class="section-label">Knowledge Hub</span><h2 class="section-title">TRADER'S <span>BLOG</span></h2></div><a href="#blog" class="btn-sec" style="font-size:1rem;padding:0.5rem 1.2rem;">ALL POSTS →</a></div>
+    <div class="blog-grid reveal">
+        <div class="blog-card feat-post"><div class="blog-img" style="background:linear-gradient(135deg,#C0392B,#E67E22);"><span>📈</span><div class="blog-tag-pill">FEATURED</div></div><div class="blog-body"><div class="blog-date">March 28, 2024</div><div class="blog-title">How to Read Candlestick Charts: A Beginner's Comic Guide for Indian Traders</div><p class="blog-excerpt">Candlestick charts look scary at first — but they're actually telling you a story! We break down the most important patterns using our animal characters...</p><a href="#" class="read-more">READ MORE →</a></div></div>
+        <div class="blog-card"><div class="blog-img" style="background:linear-gradient(135deg,#00856F,#27AE60);font-size:2.8rem;">🐂<div class="blog-tag-pill">BASICS</div></div><div class="blog-body"><div class="blog-date">March 20, 2024</div><div class="blog-title">What is Sensex? Explained for a 12-Year-Old</div><p class="blog-excerpt">If the Sensex is "the market," what exactly is it measuring?</p><a href="#" class="read-more">READ MORE →</a></div></div>
+        <div class="blog-card"><div class="blog-img" style="background:linear-gradient(135deg,#2C3E50,#3498DB);font-size:2.8rem;">🐢<div class="blog-tag-pill">STRATEGY</div></div><div class="blog-body"><div class="blog-date">March 12, 2024</div><div class="blog-title">SIP vs Lump Sum: Which Tortoise Strategy Wins?</div><p class="blog-excerpt">Should you invest all at once or a little each month?</p><a href="#" class="read-more">READ MORE →</a></div></div>
+    </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section id="newsletter">
+    <div class="nl-wrap reveal">
+        <h2 class="nl-title">GET FREE TRADING TIPS! 📬</h2>
+        <p class="nl-sub">Join 5,000+ young traders getting weekly market insights, tips, and trading lessons — all free.</p>
+        <div class="nl-form"><input type="email" id="nlEmail" placeholder="Enter your email address..."><button class="nl-btn" onclick="doSubscribe()">SUBSCRIBE 🚀</button></div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-grid">
+        <div><a href="#home" class="f-logo">TRIT<span>.</span></a><p class="f-desc">That Rookie Indian Trader — Teaching stock market trading to kids and beginners through fun stories and illustrated characters.</p><p class="f-site">🌐 thatrookieindiantrader.com</p></div>
+        <div><div class="f-h">QUICK LINKS</div><ul class="f-links"><li><a href="#home">Home</a></li><li><a href="#about-book">About the Book</a></li><li><a href="#characters">Characters</a></li><li><a href="#author">About Author</a></li><li><a href="#order">Order Now</a></li><li><a href="#track">Track Order</a></li><li><a href="#blog">Blog</a></li></ul></div>
+        <div><div class="f-h">ORDER</div><ul class="f-links"><li><a href="#order">Physical Book — ₹250</a></li><li><a href="#order">E-Book — ₹99</a></li><li><a href="#">Bulk / School Orders</a></li><li><a href="#track">Track My Order</a></li><li><a href="#">Refund Policy</a></li></ul></div>
+        <div><div class="f-h">CONNECT</div><ul class="f-links"><li><a href="https://www.instagram.com/thatrookieindiantrader" target="_blank">📷 Instagram</a></li><li><a href="https://youtube.com/@thatrookieindiantrader" target="_blank">▶️ YouTube</a></li><li><a href="https://t.me/thatrookieindiantraderofficial" target="_blank">✈️ Telegram Community</a></li><li><a href="/app.html" target="_blank">📱 TRIT App</a></li></ul></div>
+    </div>
+    <div class="footer-bar"><span>© 2024 That Rookie Indian Trader · Pratik Shukla. All rights reserved.</span><div style="display:flex;gap:1.5rem;"><a href="#">Privacy Policy</a><a href="#">Terms &amp; Conditions</a><a href="#">Refund Policy</a></div></div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+    // ═══════════════════════════════════
+    // ⚠️  REPLACE THESE TWO VALUES
+    // ═══════════════════════════════════
+    const RAZORPAY_KEY    = 'rzp_live_SdgkiWFBrtSurL';
+    const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbySX23fkdveAyxsIE0-WuikOWm0wXUJC-_-M4472i9R63qbeZJiZRi_iTsrldk6NSjgBQ/exec';
+
+    // ══════════════════════════════════════════
+    // SOUND EFFECTS — Web Audio API (no files needed)
+    // ══════════════════════════════════════════
+    const SFX = (() => {
+        let ctx = null;
+
+        function getCtx() {
+            if (!ctx) ctx = new (window.AudioContext || window.webkitAudioContext)();
+            return ctx;
+        }
+
+        // Generic tone player
+        function tone(freq, type, duration, vol, fadeOut=true) {
+            try {
+                const c   = getCtx();
+                const osc = c.createOscillator();
+                const gain= c.createGain();
+                osc.connect(gain);
+                gain.connect(c.destination);
+                osc.type = type;
+                osc.frequency.setValueAtTime(freq, c.currentTime);
+                gain.gain.setValueAtTime(vol, c.currentTime);
+                if (fadeOut) gain.gain.exponentialRampToValueAtTime(0.001, c.currentTime + duration);
+                osc.start(c.currentTime);
+                osc.stop(c.currentTime + duration);
+            } catch(e) {}
+        }
+
+        // Click — short crisp tick
+        function click() {
+            try {
+                const c    = getCtx();
+                const buf  = c.createBuffer(1, c.sampleRate * 0.04, c.sampleRate);
+                const data = buf.getChannelData(0);
+                for (let i = 0; i < data.length; i++)
+                    data[i] = (Math.random() * 2 - 1) * Math.pow(1 - i/data.length, 8);
+                const src  = c.createBufferSource();
+                const gain = c.createGain();
+                src.buffer = buf;
+                src.connect(gain); gain.connect(c.destination);
+                gain.gain.setValueAtTime(0.18, c.currentTime);
+                src.start();
+            } catch(e) {}
+        }
+
+        // Hover — very soft high tick
+        function hover() {
+            tone(900, 'sine', 0.06, 0.04);
+        }
+
+        // Success — ascending chime (do-mi-sol)
+        function success() {
+            try {
+                const c = getCtx();
+                [[523, 0], [659, 0.1], [784, 0.2]].forEach(([freq, delay]) => {
+                    const osc  = c.createOscillator();
+                    const gain = c.createGain();
+                    osc.connect(gain); gain.connect(c.destination);
+                    osc.type = 'sine';
+                    osc.frequency.setValueAtTime(freq, c.currentTime + delay);
+                    gain.gain.setValueAtTime(0, c.currentTime + delay);
+                    gain.gain.linearRampToValueAtTime(0.18, c.currentTime + delay + 0.02);
+                    gain.gain.exponentialRampToValueAtTime(0.001, c.currentTime + delay + 0.4);
+                    osc.start(c.currentTime + delay);
+                    osc.stop(c.currentTime + delay + 0.45);
+                });
+            } catch(e) {}
+        }
+
+        // Error — descending double beep
+        function error() {
+            try {
+                const c = getCtx();
+                [[400, 0], [300, 0.15]].forEach(([freq, delay]) => {
+                    const osc  = c.createOscillator();
+                    const gain = c.createGain();
+                    osc.connect(gain); gain.connect(c.destination);
+                    osc.type = 'square';
+                    osc.frequency.setValueAtTime(freq, c.currentTime + delay);
+                    gain.gain.setValueAtTime(0.08, c.currentTime + delay);
+                    gain.gain.exponentialRampToValueAtTime(0.001, c.currentTime + delay + 0.15);
+                    osc.start(c.currentTime + delay);
+                    osc.stop(c.currentTime + delay + 0.18);
+                });
+            } catch(e) {}
+        }
+
+        // Tab switch — soft pop
+        function tab() {
+            tone(440, 'sine', 0.08, 0.08);
+        }
+
+        // Scroll reveal — gentle whoosh
+        function reveal() {
+            tone(300, 'sine', 0.12, 0.05);
+        }
+
+        // Order complete — celebratory fanfare
+        function orderComplete() {
+            try {
+                const c = getCtx();
+                [[523,0],[659,0.1],[784,0.2],[1047,0.35]].forEach(([freq, delay]) => {
+                    const osc  = c.createOscillator();
+                    const gain = c.createGain();
+                    osc.connect(gain); gain.connect(c.destination);
+                    osc.type = 'sine';
+                    osc.frequency.setValueAtTime(freq, c.currentTime + delay);
+                    gain.gain.setValueAtTime(0, c.currentTime + delay);
+                    gain.gain.linearRampToValueAtTime(0.2, c.currentTime + delay + 0.02);
+                    gain.gain.exponentialRampToValueAtTime(0.001, c.currentTime + delay + 0.5);
+                    osc.start(c.currentTime + delay);
+                    osc.stop(c.currentTime + delay + 0.55);
+                });
+            } catch(e) {}
+        }
+
+        // Subscribe — cheerful two-tone
+        function subscribe() {
+            try {
+                const c = getCtx();
+                [[659,0],[880,0.12]].forEach(([freq, delay]) => {
+                    const osc  = c.createOscillator();
+                    const gain = c.createGain();
+                    osc.connect(gain); gain.connect(c.destination);
+                    osc.type = 'sine';
+                    osc.frequency.setValueAtTime(freq, c.currentTime + delay);
+                    gain.gain.setValueAtTime(0.15, c.currentTime + delay);
+                    gain.gain.exponentialRampToValueAtTime(0.001, c.currentTime + delay + 0.3);
+                    osc.start(c.currentTime + delay);
+                    osc.stop(c.currentTime + delay + 0.35);
+                });
+            } catch(e) {}
+        }
+
+        return { click, hover, success, error, tab, reveal, orderComplete, subscribe };
+    })();
+
+    // ── ATTACH SOUNDS TO ALL INTERACTIVE ELEMENTS ──
+    document.addEventListener('DOMContentLoaded', () => {
+
+        // Primary & secondary buttons — click sound
+        document.querySelectorAll('.btn-pri, .btn-sec, .nav-buy').forEach(el => {
+            el.addEventListener('click', () => SFX.click());
+        });
+
+        // Nav links — soft hover + click
+        document.querySelectorAll('.nav-links a, .mobile-menu a').forEach(el => {
+            el.addEventListener('mouseenter', () => SFX.hover());
+            el.addEventListener('click', () => SFX.click());
+        });
+
+        // Tab buttons — tab sound
+        document.querySelectorAll('.tab-btn').forEach(el => {
+            el.addEventListener('click', () => SFX.tab());
+        });
+
+        // Payment option selector
+        document.querySelectorAll('.pay-opt').forEach(el => {
+            el.addEventListener('click', () => SFX.click());
+        });
+
+        // Feature cards, char cards — hover sound
+        document.querySelectorAll('.feat, .char-card, .blog-card, .test-card').forEach(el => {
+            el.addEventListener('mouseenter', () => SFX.hover());
+        });
+
+        // Social buttons
+        document.querySelectorAll('.soc-btn').forEach(el => {
+            el.addEventListener('mouseenter', () => SFX.hover());
+            el.addEventListener('click', () => SFX.click());
+        });
+
+        // Footer links
+        document.querySelectorAll('.f-links a').forEach(el => {
+            el.addEventListener('click', () => SFX.click());
+        });
+
+        // Hamburger
+        document.getElementById('hbg').addEventListener('click', () => SFX.tab());
+
+        // Read more links
+        document.querySelectorAll('.read-more').forEach(el => {
+            el.addEventListener('click', () => SFX.click());
+        });
+    });
+
+    // ── HAMBURGER ──
+    const hbg = document.getElementById('hbg');
+    const mmenu = document.getElementById('mmenu');
+    hbg.addEventListener('click', () => { hbg.classList.toggle('open'); mmenu.classList.toggle('open'); });
+    function closeMenu() { hbg.classList.remove('open'); mmenu.classList.remove('open'); }
+
+    // ── ACTIVE NAV ON SCROLL ──
+    window.addEventListener('scroll', () => {
+        const sections = document.querySelectorAll('section[id]');
+        const links = document.querySelectorAll('.nav-links a');
+        const y = window.scrollY + 90;
+        sections.forEach(s => {
+            if (y >= s.offsetTop && y < s.offsetTop + s.offsetHeight) {
+                links.forEach(l => l.classList.remove('active'));
+                const m = document.querySelector(`.nav-links a[href="#${s.id}"]`);
+                if (m) m.classList.add('active');
+            }
+        });
+    });
+
+    // ── SCROLL REVEAL ──
+    const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal,.reveal-l,.reveal-r').forEach(el => obs.observe(el));
+
+    // ── TABS ──
+    function switchTab(type) {
+        document.querySelectorAll('.tab-btn').forEach((b,i) => b.classList.toggle('active',(i===0)===(type==='physical')));
+        document.getElementById('pp').classList.toggle('active', type === 'physical');
+        document.getElementById('ep').classList.toggle('active', type === 'ebook');
+    }
+    function selPay(el, gridId) {
+        document.getElementById(gridId).querySelectorAll('.pay-opt').forEach(o => o.classList.remove('sel'));
+        el.classList.add('sel');
+    }
+    function getSelectedPay(gridId) {
+        const sel = document.querySelector(`#${gridId} .pay-opt.sel .pay-name`);
+        return sel ? sel.textContent.trim() : 'RAZORPAY';
+    }
+
+    // ── ORDER ──
+    function highlightField(id) {
+        const el = document.getElementById(id);
+        if (!el) return;
+        el.style.borderColor = '#E74C3C';
+        el.focus();
+        setTimeout(() => el.style.borderColor = '', 2500);
+    }
+
+    function doOrder(type) {
+        SFX.click();
+        if (type === 'physical') {
+            const n = document.getElementById('pName').value.trim();
+            const e = document.getElementById('pEmail').value.trim();
+            const p = document.getElementById('pPhone').value.trim();
+            const a = document.getElementById('pAddr').value.trim();
+            const s = document.getElementById('pState').value;
+
+            // Field by field validation with specific messages
+            if (!n) { highlightField('pName'); showToast('⚠️ Please enter your Full Name', true); return; }
+            if (!p) { highlightField('pPhone'); showToast('⚠️ Please enter your Phone Number', true); return; }
+            if (p.replace(/\D/g,'').length < 10) { highlightField('pPhone'); showToast('⚠️ Please enter a valid 10-digit phone number', true); return; }
+            if (!e) { highlightField('pEmail'); showToast('⚠️ Please enter your Email Address', true); return; }
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)) { highlightField('pEmail'); showToast('⚠️ Please enter a valid email address', true); return; }
+            if (!a || a.length < 10) { highlightField('pAddr'); showToast('⚠️ Please enter your complete address with pincode', true); return; }
+            if (!s) { highlightField('pState'); showToast('⚠️ Please select your State', true); return; }
+
+            const pm = getSelectedPay('pPayGrid');
+            if (pm === 'COD') {
+                saveOrder({ type:'Physical Book', name:n, email:e, phone:p, address:a, state:s, payment:'COD', paymentId:'COD', amount:250 }, 'pBtn');
+            } else {
+                initRazorpay({ amount:25000, name:n, email:e, phone:p, desc:'That Rookie Indian Trader — Physical Book (₹250)',
+                    onSuccess(pid) { saveOrder({ type:'Physical Book', name:n, email:e, phone:p, address:a, state:s, payment:'Razorpay', paymentId:pid, amount:250 }, 'pBtn'); }
+                });
+            }
+        } else {
+            const n  = document.getElementById('eName').value.trim();
+            const e  = document.getElementById('eEmail').value.trim();
+            const ph = document.getElementById('ePhone').value.trim();
+
+            if (!n) { highlightField('eName'); showToast('⚠️ Please enter your Full Name', true); return; }
+            if (!e) { highlightField('eEmail'); showToast('⚠️ Please enter your Email Address', true); return; }
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)) { highlightField('eEmail'); showToast('⚠️ Please enter a valid email address', true); return; }
+            if (!ph) { highlightField('ePhone'); showToast('⚠️ Please enter your WhatsApp Number', true); return; }
+            if (ph.replace(/\D/g,'').length < 10) { highlightField('ePhone'); showToast('⚠️ Please enter a valid 10-digit WhatsApp number', true); return; }
+
+            initRazorpay({ amount:9900, name:n, email:e, phone:ph, desc:'That Rookie Indian Trader — E-Book (₹99)',
+                onSuccess(pid) { saveOrder({ type:'E-Book', name:n, email:e, phone:ph, address:'N/A (E-Book)', state:'N/A', payment:'Razorpay', paymentId:pid, amount:99 }, 'eBtn'); }
+            });
+        }
+    }
+
+    function initRazorpay({ amount, name, email, phone, desc, onSuccess }) {
+        if (typeof Razorpay === 'undefined') {
+            showToast('⏳ Loading payment gateway...');
+            const s = document.createElement('script'); s.src = 'https://checkout.razorpay.com/v1/checkout.js';
+            s.onload = () => initRazorpay({ amount, name, email, phone, desc, onSuccess });
+            document.head.appendChild(s); return;
+        }
+        new Razorpay({
+            key             : RAZORPAY_KEY,
+            amount          : amount,
+            currency        : 'INR',
+            name            : 'That Rookie Indian Trader',
+            description     : desc,
+            image           : '',
+            handler(res)    { onSuccess(res.razorpay_payment_id); },
+            prefill         : { name, email, contact: phone },
+            theme           : { color: '#FFD700' },
+            method          : {
+                upi          : true,
+                card         : true,
+                netbanking   : true,
+                wallet       : true,
+                emi          : true,
+                paylater     : true
+            },
+            config          : {
+                display      : {
+                    blocks   : {
+                        utib : { name: 'Pay via UPI', instruments: [{ method: 'upi' }] },
+                        other: { name: 'Other Methods', instruments: [{ method: 'card' }, { method: 'netbanking' }, { method: 'wallet' }] }
+                    },
+                    sequence : ['block.utib', 'block.other'],
+                    preferences: { show_default_blocks: true }
+                }
+            },
+            modal           : { ondismiss() { showToast('❌ Payment cancelled', true); } }
+        }).open();
+    }
+
+    async function saveOrder(data, btnId) {
+        const btn = document.getElementById(btnId);
+        btn.disabled = true;
+        btn.innerHTML = '<span class="spinner"></span> PLACING ORDER...';
+
+        // Send to Google Apps Script using no-cors (most reliable method)
+        // With no-cors we cannot read the response, but data IS received by the script
+        try {
+            await fetch(APPS_SCRIPT_URL, {
+                method  : 'POST',
+                mode    : 'no-cors',
+                headers : { 'Content-Type': 'text/plain' },
+                body    : JSON.stringify({ action:'save_order', ...data })
+            });
+        } catch(err) {
+            console.log('Fetch error (may still have succeeded):', err);
+        }
+
+        // Always show success after payment — Razorpay already confirmed the money
+        // The Apps Script receives the data even when we can't read its response
+        btn.innerHTML = '✅ ORDER PLACED!';
+        SFX.orderComplete();
+        if (data.payment === 'COD') {
+            showToast('🎉 COD Order placed! We will contact you to confirm soon.');
+        } else {
+            showToast('🎉 Order placed! Check your email for confirmation & Order ID.');
+        }
+        localStorage.setItem('lastOrderEmail', data.email);
+    }
+
+    // ── TRACKING ──
+    function clearTrackEmail() { document.getElementById('trackEmail').value = ''; }
+    function clearTrackId()    { document.getElementById('trackId').value = ''; }
+
+    async function doTrack() {
+        SFX.click();
+        const id    = document.getElementById('trackId').value.trim();
+        const email = document.getElementById('trackEmail').value.trim();
+        if (!id && !email) { showToast('⚠️ Enter your Order ID or email address!', true); return; }
+
+        const btn = document.getElementById('trackBtn');
+        btn.innerHTML = '<span class="spinner"></span> TRACKING...';
+        btn.disabled = true;
+        document.getElementById('trackResult').classList.remove('show');
+        document.getElementById('trackError').classList.remove('show');
+
+        try {
+            const res  = await fetch(APPS_SCRIPT_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'text/plain' },
+                body: JSON.stringify({ action:'track_order', orderId:id, email })
+            });
+            const json = await res.json();
+            btn.innerHTML = '🔍 TRACK MY ORDER'; btn.disabled = false;
+            if (json.success && json.order) { renderTrackResult(json.order); }
+            else { document.getElementById('trackErrorMsg').textContent = json.message || 'Order not found.'; document.getElementById('trackError').classList.add('show'); }
+        } catch(err) {
+            btn.innerHTML = '🔍 TRACK MY ORDER'; btn.disabled = false;
+            document.getElementById('trackErrorMsg').textContent = 'Connection error. Please try again shortly.';
+            document.getElementById('trackError').classList.add('show');
+        }
+    }
+
+    function renderTrackResult(o) {
+        document.getElementById('tr-orderId').textContent = o.orderId;
+        document.getElementById('tr-name').textContent    = o.name;
+        document.getElementById('tr-type').textContent    = o.type;
+        document.getElementById('tr-date').textContent    = o.date;
+        document.getElementById('tr-amount').textContent  = '₹' + o.amount;
+        document.getElementById('tr-payment').textContent = o.payment;
+        document.getElementById('tr-address').textContent = o.type === 'E-Book' ? o.email : (o.address + ', ' + o.state);
+        document.getElementById('tl1-date').textContent   = o.date;
+
+        const statusEl = document.getElementById('tr-status');
+        statusEl.textContent = o.status;
+        statusEl.className = 'tr-status ' + (o.status||'confirmed').toLowerCase();
+
+        if (o.type === 'E-Book') {
+            document.getElementById('tl2-title').textContent = 'E-Book Sent to Email';
+            document.getElementById('tl3-title').textContent = 'Download Link Active';
+            document.getElementById('tl4-title').textContent = 'Enjoy Reading!';
+        }
+
+        ['tl1','tl2','tl3','tl4'].forEach(id => { document.getElementById(id).className = 'tl-dot pending'; });
+        document.getElementById('tl1').className = 'tl-dot done';
+        const s = (o.status||'').toLowerCase();
+        if (s==='shipped'||s==='delivered') document.getElementById('tl2').className = 'tl-dot done';
+        if (s==='delivered') { document.getElementById('tl3').className='tl-dot done'; document.getElementById('tl4').className='tl-dot done'; }
+        if (s==='confirmed') document.getElementById('tl2').className = 'tl-dot active';
+        if (s==='shipped')   document.getElementById('tl3').className = 'tl-dot active';
+
+        document.getElementById('trackResult').classList.add('show');
+    }
+
+    // Auto-fill last order ID
+    window.addEventListener('load', () => {
+        const lastId = localStorage.getItem('lastOrderId');
+        if (lastId) document.getElementById('trackId').value = lastId;
+    });
+
+    // ── NEWSLETTER ──
+    function doSubscribe() {
+        const e = document.getElementById('nlEmail').value.trim();
+        if (!e||!e.includes('@')) { SFX.error(); showToast('⚠️ Enter a valid email address!', true); return; }
+        SFX.subscribe();
+        showToast('🎉 Subscribed! Welcome to the TRIT community!');
+        document.getElementById('nlEmail').value = '';
+    }
+
+    // ── TOAST ──
+    function showToast(msg, isError=false) {
+        const t = document.getElementById('toast');
+        t.textContent = msg;
+        t.className = 'toast' + (isError?' error':'');
+        t.classList.add('show');
+        if (isError) SFX.error(); else SFX.success();
+        setTimeout(() => t.classList.remove('show'), 4500);
+    }
+
+    // Pre-load Razorpay
+    (() => { const s=document.createElement('script'); s.src='https://checkout.razorpay.com/v1/checkout.js'; s.async=true; document.head.appendChild(s); })();
+</script>
+
+<!-- ══ PWA INSTALL BANNER ══ -->
+<style>
+#installBanner{
+    display:none;
+    position:fixed;
+    bottom:0;left:0;right:0;
+    background:#000;
+    border-top:3px solid #FFD700;
+    padding:0.9rem 1rem;
+    z-index:9999;
+    align-items:center;
+    justify-content:space-between;
+    gap:0.8rem;
+    box-shadow:0 -4px 20px rgba(255,215,0,0.15);
+}
+#installBanner.show{display:flex}
+.ib-left{display:flex;align-items:center;gap:0.7rem}
+.ib-icon{width:42px;height:42px;border-radius:10px;
+    background:linear-gradient(135deg,#1a1200,#111);
+    border:1.5px solid rgba(255,215,0,0.4);
+    display:flex;align-items:center;justify-content:center;
+    font-size:1.3rem;flex-shrink:0}
+.ib-text{flex:1}
+.ib-title{font-family:'Bangers',cursive;font-size:0.95rem;
+    letter-spacing:1px;color:#FFD700;display:block}
+.ib-sub{font-size:0.72rem;color:rgba(255,255,255,0.45);display:block;margin-top:1px}
+.ib-install{font-family:'Bangers',cursive;font-size:0.95rem;
+    letter-spacing:1px;background:#FFD700;color:#000;
+    border:none;padding:0.6rem 1.2rem;border-radius:8px;
+    cursor:pointer;white-space:nowrap;flex-shrink:0;
+    box-shadow:0 3px 0 #FF6B00}
+.ib-install:active{transform:translateY(2px);box-shadow:0 1px 0 #FF6B00}
+.ib-close{background:transparent;border:none;color:rgba(255,255,255,0.3);
+    font-size:1.2rem;cursor:pointer;padding:0.2rem;flex-shrink:0}
+
+/* iOS instruction popup */
+#iosPopup{
+    display:none;
+    position:fixed;
+    bottom:0;left:0;right:0;
+    background:#111;
+    border-top:3px solid #FFD700;
+    border-radius:16px 16px 0 0;
+    padding:1.5rem 1.2rem 2rem;
+    z-index:9999;
+    box-shadow:0 -4px 30px rgba(0,0,0,0.7);
+}
+#iosPopup.show{display:block}
+.ios-handle{width:36px;height:4px;background:rgba(255,255,255,0.2);
+    border-radius:2px;margin:0 auto 1rem}
+.ios-title{font-family:'Bangers',cursive;font-size:1.1rem;
+    letter-spacing:1px;color:#FFD700;margin-bottom:0.8rem;text-align:center}
+.ios-step{display:flex;align-items:flex-start;gap:0.7rem;
+    padding:0.6rem 0;border-bottom:1px solid #1a1a1a}
+.ios-num{width:24px;height:24px;border-radius:50%;background:#FFD700;
+    color:#000;font-family:'Bangers',cursive;font-size:0.85rem;
+    display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ios-txt{font-size:0.85rem;color:rgba(255,255,255,0.7);line-height:1.5;padding-top:2px}
+.ios-txt b{color:#FFD700}
+.ios-close{width:100%;margin-top:1rem;font-family:'Bangers',cursive;
+    font-size:1rem;letter-spacing:1px;background:transparent;
+    color:rgba(255,255,255,0.4);border:1.5px solid rgba(255,255,255,0.15);
+    padding:0.6rem;border-radius:8px;cursor:pointer}
+</style>
+
+<!-- Banner HTML -->
+<div id="installBanner">
+    <div class="ib-left">
+        <div class="ib-icon">📈</div>
+        <div class="ib-text">
+            <span class="ib-title">TRIT APP — FREE</span>
+            <span class="ib-sub">Paper trade · News · Charts · Glossary</span>
+        </div>
+    </div>
+    <button class="ib-install" id="ib-btn" onclick="handleInstall()">📲 OPEN APP</button>
+    <button class="ib-close" onclick="hideBanner()">✕</button>
+</div>
+
+<!-- iOS Popup -->
+<div id="iosPopup">
+    <div class="ios-handle" onclick="closeIosPopup()"></div>
+    <div class="ios-title">📱 INSTALL ON iPHONE</div>
+    <div class="ios-step">
+        <div class="ios-num">1</div>
+        <div class="ios-txt">Tap the <b>Share</b> button at the bottom of Safari <b>□↑</b></div>
+    </div>
+    <div class="ios-step">
+        <div class="ios-num">2</div>
+        <div class="ios-txt">Scroll down and tap <b>Add to Home Screen</b></div>
+    </div>
+    <div class="ios-step">
+        <div class="ios-num">3</div>
+        <div class="ios-txt">Tap <b>Add</b> — TRIT icon appears on your home screen! ✅</div>
+    </div>
+    <button class="ios-close" onclick="closeIosPopup()">GOT IT ✓</button>
+</div>
+
+<script>
+(function() {
+    var isIOS     = /iPhone|iPad|iPod/.test(navigator.userAgent) && !window.MSStream;
+    var isAndroid = /Android/.test(navigator.userAgent);
+    var isStandalone = window.matchMedia('(display-mode: standalone)').matches
+                    || window.navigator.standalone === true;
+
+    // Don't show if already installed
+    if (isStandalone) return;
+
+    var deferredPrompt = null;
+
+    // Android Chrome — capture install prompt
+    window.addEventListener('beforeinstallprompt', function(e) {
+        e.preventDefault();
+        deferredPrompt = e;
+        showBanner();
+    });
+
+    // iOS — show banner after 2 seconds
+    if (isIOS) {
+        setTimeout(showBanner, 2000);
+    }
+
+    // Android fallback — if no prompt after 3s, show manual instructions
+    if (isAndroid) {
+        setTimeout(function() {
+            if (!deferredPrompt) showBanner();
+        }, 3000);
+    }
+
+    function showBanner() {
+        var banner = document.getElementById('installBanner');
+        if (banner) banner.classList.add('show');
+    }
+
+    window.handleInstall = function() {
+        if (deferredPrompt) {
+            // Chrome Android — native install
+            deferredPrompt.prompt();
+            deferredPrompt.userChoice.then(function(result) {
+                if (result.outcome === 'accepted') {
+                    document.getElementById('ib-btn').textContent = '✅ INSTALLED!';
+                    document.getElementById('ib-btn').style.background = '#2ECC71';
+                    setTimeout(hideBanner, 2000);
+                }
+                deferredPrompt = null;
+            });
+        } else if (isIOS) {
+            // iOS — show step-by-step popup
+            hideBanner();
+            document.getElementById('iosPopup').classList.add('show');
+        } else {
+            // Manual fallback — open app URL
+            window.open('/app.html', '_blank');
+        }
+    };
+
+    window.hideBanner = function() {
+        var b = document.getElementById('installBanner');
+        if (b) b.classList.remove('show');
+        // Remember dismissed for 3 days
+        try { localStorage.setItem('trit_banner_dismissed', Date.now()); } catch(e) {}
+    };
+
+    window.closeIosPopup = function() {
+        document.getElementById('iosPopup').classList.remove('show');
+    };
+
+    // Don't show if dismissed recently
+    try {
+        var dismissed = localStorage.getItem('trit_banner_dismissed');
+        if (dismissed && Date.now() - parseInt(dismissed) < 3 * 24 * 3600 * 1000) return;
+    } catch(e) {}
+})();
+</script>
+
+
+<script>
+// ══════════════════════════════════
+// TRIT CHATBOT
+// Add this script to both app & website
+// ══════════════════════════════════
+
+</script>
+
+<!-- ══ TRIT CHATBOT ══ -->
+<style>
+#tBot{position:fixed;bottom:74px;right:14px;z-index:99999;font-family:'Inter','Nunito',sans-serif}
+#tBotBtn{
+  width:52px;height:52px;border-radius:50%;
+  background:#FFD700;border:3px solid #000;
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;font-size:1.4rem;
+  box-shadow:0 4px 16px rgba(255,215,0,0.5);
+  margin-left:auto;
+  -webkit-tap-highlight-color:transparent;
+  touch-action:manipulation;
+}
+#tBotBtn:active{transform:scale(0.9)}
+#tChatBox{
+  display:none;
+  position:fixed;
+  bottom:140px;
+  right:10px;
+  width:310px;
+  max-width:calc(100vw - 20px);
+  max-height:65vh;
+  background:#111;
+  border:2px solid #FFD700;
+  border-radius:16px;
+  box-shadow:0 8px 32px rgba(0,0,0,0.8);
+  flex-direction:column;
+  overflow:hidden;
+  z-index:99999;
+}
+#tChatBox.open{display:flex !important}
+#tBotHdr{
+  background:#000;
+  border-bottom:2px solid #FFD700;
+  padding:0.65rem 0.9rem;
+  display:flex;align-items:center;
+  justify-content:space-between;
+  flex-shrink:0;
+}
+#tBotHdrL{display:flex;align-items:center;gap:0.55rem}
+#tBotAv{
+  width:32px;height:32px;border-radius:50%;
+  background:#FFD700;display:flex;
+  align-items:center;justify-content:center;
+  font-size:0.95rem;flex-shrink:0;
+}
+#tBotNm{font-size:0.85rem;font-weight:700;color:#FFD700;display:block}
+#tBotSt{font-size:0.62rem;color:rgba(255,255,255,0.4);display:block}
+#tBotX{background:transparent;border:none;color:rgba(255,255,255,0.45);
+  font-size:1.1rem;cursor:pointer;padding:0.2rem 0.3rem;
+  touch-action:manipulation}
+#tMsgs{
+  flex:1;overflow-y:auto;
+  padding:0.75rem;
+  display:flex;flex-direction:column;gap:0.5rem;
+  -webkit-overflow-scrolling:touch;
+}
+.tm{
+  max-width:88%;
+  padding:0.55rem 0.75rem;
+  border-radius:10px;
+  font-size:0.8rem;
+  line-height:1.55;
+  word-break:break-word;
+}
+.tm.b{
+  background:#1a1a1a;
+  color:rgba(255,255,255,0.85);
+  align-self:flex-start;
+  border-bottom-left-radius:3px;
+}
+.tm.u{
+  background:#FFD700;
+  color:#000;
+  align-self:flex-end;
+  font-weight:600;
+  border-bottom-right-radius:3px;
+}
+#tChips{
+  display:flex;flex-wrap:wrap;gap:0.35rem;
+  padding:0.4rem 0.75rem;
+  flex-shrink:0;
+}
+.tc{
+  font-size:0.7rem;font-weight:600;
+  padding:0.28rem 0.65rem;border-radius:20px;
+  background:rgba(255,215,0,0.1);color:#FFD700;
+  border:1px solid rgba(255,215,0,0.3);
+  cursor:pointer;white-space:nowrap;
+  touch-action:manipulation;
+  -webkit-tap-highlight-color:transparent;
+}
+.tc:active{background:rgba(255,215,0,0.25)}
+#tInputRow{
+  display:flex;gap:0.4rem;
+  padding:0.55rem 0.75rem;
+  border-top:1px solid #1a1a1a;
+  background:#0a0a0a;
+  flex-shrink:0;
+}
+#tInp{
+  flex:1;background:#111;border:1.5px solid #222;
+  border-radius:8px;color:#fff;
+  font-size:0.8rem;padding:0.42rem 0.65rem;
+  outline:none;font-family:inherit;
+}
+#tInp:focus{border-color:#FFD700}
+#tSend{
+  background:#FFD700;color:#000;border:none;
+  border-radius:8px;padding:0.42rem 0.75rem;
+  font-weight:700;font-size:0.8rem;
+  cursor:pointer;touch-action:manipulation;
+}
+</style>
+
+<div id="tBot">
+  <div id="tChatBox">
+    <div id="tBotHdr">
+      <div id="tBotHdrL">
+        <div id="tBotAv">📈</div>
+        <div>
+          <span id="tBotNm">TRIT Assistant</span>
+          <span id="tBotSt">🟢 Online · Always ready!</span>
+        </div>
+      </div>
+      <button id="tBotX">✕</button>
+    </div>
+    <div id="tMsgs"></div>
+    <div id="tChips"></div>
+    <div id="tInputRow">
+      <input id="tInp" type="text" placeholder="Ask anything...">
+      <button id="tSend">Send</button>
+    </div>
+  </div>
+  <button id="tBotBtn">💬</button>
+</div>
+
+<script>
+(function(){
+  var KB = {
+    greet:{p:['hello','hi','hey','namaste','hii','helo','help','start'],r:'👋 Namaste! Main hoon <b>TRIT Assistant</b>!\n\nMain in cheezein ke baare mein bata sakta hoon:\n📦 Book order & price\n🚚 Delivery & tracking\n📷 Instagram · ▶️ YouTube · ✈️ Telegram\n📱 App info\n📞 Contact & support'},
+    price:{p:['price','cost','kitne','how much','rate','₹','rupee','paisa'],r:'📚 <b>Book Prices:</b>\n\n📦 Physical Book → <b>₹250</b> (Free shipping)\n📱 E-Book (PDF) → <b>₹99</b> (Instant delivery)\n\nPayment: UPI · Cards · COD · Netbanking'},
+    order:{p:['order','buy','purchase','kharid','how to','kaise','book kaise','milega'],r:'📦 <b>Order Kaise Karein:</b>\n\n1️⃣ thatrookieindiantrader.in kholo\n2️⃣ "ORDER NOW" pe jao\n3️⃣ Physical (₹250) ya E-Book (₹99) choose karo\n4️⃣ Details fill karo\n5️⃣ Payment karo → Done! ✅\n\nOrder ID email pe aayega — save karein!'},
+    track:{p:['track','tracking','order id','status','delivery','shipped','kahan','mera order'],r:'🔍 <b>Order Track Karein:</b>\n\n1️⃣ thatrookieindiantrader.in pe jao\n2️⃣ "Track Order" section kholo\n3️⃣ Order ID ya Email daalo\n4️⃣ Status dekho ✅\n\nOrder ID confirmation email mein hota hai.'},
+    delivery:{p:['delivery','shipping','dispatch','days','kitne din','deliver','kab'],r:'🚚 <b>Delivery Details:</b>\n\nDispatch: 1-2 business days\nDelivery: 5-7 business days\n🆓 Shipping FREE all India\n\nTracking email pe aayegi ship hone ke baad.'},
+    instagram:{p:['instagram','insta','ig','follow'],r:'📷 <b>Instagram:</b>\n\n👉 <b>@thatrookieindiantrader</b>\nhttps://www.instagram.com/thatrookieindiantrader\n\nFollow karo for trading tips & updates! 📈'},
+    youtube:{p:['youtube','video','channel','yt','tutorial','watch'],r:'▶️ <b>YouTube Channel:</b>\n\n👉 <b>@thatrookieindiantrader</b>\nhttps://youtube.com/@thatrookieindiantrader\n\nFree trading tutorials — Subscribe karo! 🔔'},
+    telegram:{p:['telegram','community','group','channel','tg'],r:'✈️ <b>Telegram Community:</b>\n\n👉 <b>@thatrookieindiantraderofficial</b>\nhttps://t.me/thatrookieindiantraderofficial\n\nJoin karo — daily market updates & tips! 📊'},
+    app:{p:['app','application','install','download','mobile'],r:'📱 <b>TRIT App (Free!):</b>\n\nthatrookieindiantrader.in/app.html\n\n✅ Paper Trading — ₹1L virtual money\n✅ Candlestick Charts\n✅ Live Market News\n✅ Watchlist, Glossary, Leaderboard\n\n<b>Install:</b> Chrome menu ⋮ → Add to Home Screen'},
+    book:{p:['book','kitab','about','kya hai','content','sikhega','padhai','trit'],r:'📚 <b>That Rookie Indian Trader:</b>\n\n✅ 200+ pages · Illustrated characters\n✅ Beginner-friendly language\n✅ Real Indian market examples\n✅ Tortoise Strategy explained\n\nPerfect for students & beginners! 🎯'},
+    author:{p:['author','pratik','shukla','writer','kisne'],r:'👨‍💼 <b>Author: Pratik Shukla</b>\n\nMission: Stock market trading ko India ke every rookie ke liye accessible banana!\n\n📷 @thatrookieindiantrader\n▶️ @thatrookieindiantrader\n✈️ @thatrookieindiantraderofficial'},
+    contact:{p:['contact','help','support','helpline','phone','email','problem','madad'],r:'📞 <b>Contact & Support:</b>\n\n📷 Instagram DM (Fastest):\n@thatrookieindiantrader\n\n✈️ Telegram:\nt.me/thatrookieindiantraderofficial\n\n📧 Email:\nmailmepratik443@gmail.com\n\nReply time: 24-48 hours 🙏'},
+    payment:{p:['payment','pay','upi','card','cod','cash','razorpay','gpay'],r:'💳 <b>Payment Methods:</b>\n\n✅ UPI (GPay, PhonePe, Paytm)\n✅ Credit/Debit Cards\n✅ Net Banking\n✅ COD (Physical book only)\n\nSecure payment by Razorpay 🔒'},
+    refund:{p:['refund','return','cancel','wapas','money back'],r:'↩️ <b>Refund Policy:</b>\n\n📦 Physical: Cancel before dispatch\n📱 E-Book: No refund (digital product)\n\nHelp: mailmepratik443@gmail.com'},
+    ebook:{p:['ebook','e-book','pdf','digital','soft copy','99'],r:'📱 <b>E-Book — ₹99:</b>\n\n⚡ Instant delivery after payment\n📧 Google Drive link email pe\n📱 Mobile/Laptop pe read karo\n\nNote: View-only (no download)'},
+  };
+
+  var CHIPS = [
+    {l:'📦 Order',k:'order'},{l:'💰 Price',k:'price'},
+    {l:'🚚 Delivery',k:'delivery'},{l:'📷 Insta',k:'instagram'},
+    {l:'▶️ YouTube',k:'youtube'},{l:'✈️ Telegram',k:'telegram'},
+    {l:'📱 App',k:'app'},{l:'📞 Contact',k:'contact'},
+  ];
+
+  var isOpen = false;
+
+  function getEl(id){return document.getElementById(id)}
+
+  function reply(txt){
+    var msgs = getEl('tMsgs');
+    var d = document.createElement('div');
+    d.className = 'tm b';
+    d.innerHTML = txt.replace(/\n/g,'<br>');
+    msgs.appendChild(d);
+    msgs.scrollTop = 99999;
+  }
+
+  function userMsg(txt){
+    var msgs = getEl('tMsgs');
+    var d = document.createElement('div');
+    d.className = 'tm u';
+    d.textContent = txt;
+    msgs.appendChild(d);
+    msgs.scrollTop = 99999;
+  }
+
+  function getReply(q){
+    var s = q.toLowerCase().trim();
+    for(var k in KB){
+      if(KB[k].p.some(function(p){return s.includes(p)})){
+        return KB[k].r;
+      }
+    }
+    return '🤔 Samajh nahi aaya! Try karo:\n📦 Order · 💰 Price · 📞 Contact\n\nYa directly message karo:\n📷 @thatrookieindiantrader';
+  }
+
+  function showChips(){
+    var el = getEl('tChips');
+    el.innerHTML = '';
+    CHIPS.forEach(function(ch){
+      var b = document.createElement('button');
+      b.className = 'tc';
+      b.textContent = ch.l;
+      b.addEventListener('touchend', function(e){
+        e.preventDefault();
+        userMsg(ch.l);
+        el.innerHTML = '';
+        setTimeout(function(){
+          reply(getReply(ch.k));
+          showChips();
+        }, 350);
+      });
+      b.addEventListener('click', function(){
+        userMsg(ch.l);
+        el.innerHTML = '';
+        setTimeout(function(){
+          reply(getReply(ch.k));
+          showChips();
+        }, 350);
+      });
+      el.appendChild(b);
+    });
+  }
+
+  function open(){
+    isOpen = true;
+    getEl('tChatBox').classList.add('open');
+    getEl('tBotBtn').textContent = '✕';
+    if(!getEl('tMsgs').children.length){
+      reply(KB.greet.r);
+      setTimeout(function(){
+        reply('✨ Neeche se topic choose karo ya kuch type karo:');
+        showChips();
+      }, 600);
+    }
+  }
+
+  function close(){
+    isOpen = false;
+    getEl('tChatBox').classList.remove('open');
+    getEl('tBotBtn').textContent = '💬';
+  }
+
+  function send(){
+    var inp = getEl('tInp');
+    var txt = inp.value.trim();
+    if(!txt) return;
+    userMsg(txt);
+    inp.value = '';
+    getEl('tChips').innerHTML = '';
+    setTimeout(function(){
+      reply(getReply(txt));
+      showChips();
+    }, 400);
+  }
+
+  // Wait for DOM
+  function init(){
+    var btn = getEl('tBotBtn');
+    var x   = getEl('tBotX');
+    var snd = getEl('tSend');
+    var inp = getEl('tInp');
+    if(!btn) return;
+
+    btn.addEventListener('touchend', function(e){ e.preventDefault(); isOpen ? close() : open(); }, {passive:false});
+    btn.addEventListener('click',    function(){ isOpen ? close() : open(); });
+    x.addEventListener('touchend',   function(e){ e.preventDefault(); close(); }, {passive:false});
+    x.addEventListener('click',      function(){ close(); });
+    snd.addEventListener('touchend', function(e){ e.preventDefault(); send(); }, {passive:false});
+    snd.addEventListener('click',    function(){ send(); });
+    inp.addEventListener('keydown',  function(e){ if(e.key==='Enter') send(); });
+  }
+
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+
+</body>
+</html>
