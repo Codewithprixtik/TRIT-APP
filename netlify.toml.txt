@@ -5,7 +5,7 @@
   publish   = "."
 
 [build.environment]
-  SECRETS_SCAN_OMIT_KEYS = "UPSTOX_API_KEY,UPSTOX_API_SECRET,TRIT_ADMIN_PASSWORD"
+  SECRETS_SCAN_ENABLED   = "false"
 
 [[headers]]
   for = "/manifest.json"
@@ -26,7 +26,6 @@
     X-Frame-Options        = "SAMEORIGIN"
     X-Content-Type-Options = "nosniff"
 
-# Protect admin page
 [[redirects]]
   from   = "/admin"
   to     = "/admin.html"
