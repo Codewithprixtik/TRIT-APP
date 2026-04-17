@@ -1,0 +1,8 @@
+{
+  "name": "trit-app",
+  "version": "1.0.0",
+  "description": "That Rookie Indian Trader — PWA",
+  "dependencies": {
+    "@netlify/blobs": "^8.1.0"
+  }
+}
