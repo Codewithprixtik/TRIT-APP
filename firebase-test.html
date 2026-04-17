@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>Firebase Test</title></head>
+<body style="font-family:monospace;padding:20px;background:#111;color:#fff">
+<h3>Firebase Auth Test</h3>
+<input id="email" type="email" placeholder="test@gmail.com" 
+  style="padding:8px;width:250px;margin:8px 0;display:block">
+<button onclick="test()" style="padding:8px 16px;background:#FFD700;border:none;cursor:pointer">
+  Test Send Link
+</button>
+<pre id="log" style="margin-top:16px;color:#2ECC71"></pre>
+
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+<script>
+firebase.initializeApp({
+  apiKey   : "AIzaSyBIz6TlB-1yYKTEsifieGQ2gEIID3h7yxY",
+  authDomain: "thatrookieindiantrader-49aa3.firebaseapp.com",
+  projectId : "thatrookieindiantrader-49aa3",
+});
+const auth = firebase.auth();
+const log  = s => document.getElementById('log').textContent += s + '\n';
+
+async function test() {
+  const email = document.getElementById('email').value;
+  log('Testing: ' + email);
+  try {
+    await auth.sendSignInLinkToEmail(email, {
+      url: 'https://thatrookieindiantrader.in/app.html',
+      handleCodeInApp: true
+    });
+    log('✅ SUCCESS! Email sent!');
+  } catch(e) {
+    log('❌ Error code: ' + e.code);
+    log('❌ Message: ' + e.message);
+  }
+}
+</script>
+</body>
+</html>
