@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TRIT — Connecting...</title>
+<style>
+body{margin:0;background:#080808;display:flex;align-items:center;justify-content:center;
+  height:100vh;font-family:'Inter',sans-serif;color:#fff;flex-direction:column;
+  gap:1rem;padding:1rem;text-align:center}
+.spin{width:44px;height:44px;border:3px solid #1a1a1a;border-top-color:#FFD700;
+  border-radius:50%;animation:sp 0.8s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+.logo{font-family:'Bangers',cursive;font-size:2rem;letter-spacing:4px;color:#FFD700}
+#msg{color:rgba(255,255,255,0.8);font-size:0.9rem;max-width:300px;line-height:1.7}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="logo">TRIT.</div>
+<div class="spin" id="spin"></div>
+<p id="msg">Connecting to Upstox...</p>
+<script>
+(async function(){
+    var msg  = document.getElementById('msg');
+    var p    = new URLSearchParams(window.location.search);
+    var code = p.get('code');
+    var err  = p.get('error');
+    var isAdmin = sessionStorage.getItem('trit_admin') === '1';
+
+    function fail(text){
+        document.getElementById('spin').style.display='none';
+        msg.textContent = text;
+        setTimeout(function(){ window.location.href = isAdmin?'/admin.html':'/app.html'; }, 3000);
+    }
+
+    if(err || !code){ fail('Login cancelled. Returning...'); return; }
+
+    try {
+        // Step 1: Exchange code for token
+        msg.textContent = 'Getting access token...';
+        var r1   = await fetch('/.netlify/functions/market?action=token&code='+encodeURIComponent(code));
+        var data = await r1.json();
+        if(!data.access_token){ fail('Token error: '+JSON.stringify(data)); return; }
+
+        var token = data.access_token;
+
+        if(isAdmin){
+            // Step 2: Save to JSONBin (server-side) — all users get it!
+            msg.textContent = 'Saving token for all users...';
+            await fetch('/.netlify/functions/market?action=save_token&token='+encodeURIComponent(token));
+            sessionStorage.removeItem('trit_admin');
+            document.getElementById('spin').style.display='none';
+            msg.style.color='#2ECC71';
+            msg.textContent='✅ Done! All users now have\nreal-time Upstox prices!';
+            setTimeout(function(){ window.location.href='/admin.html?success=1'; }, 2000);
+        } else {
+            // User mode — save locally
+            var exp = new Date(); exp.setHours(23,59,59,999);
+            localStorage.setItem('upstox_token', token);
+            localStorage.setItem('upstox_token_expiry', exp.getTime());
+            document.getElementById('spin').style.display='none';
+            msg.style.color='#2ECC71';
+            msg.textContent='✅ Connected!\nReal-time prices active.';
+            setTimeout(function(){ window.location.href='/app.html'; }, 2000);
+        }
+    } catch(e){ fail('Error: '+e.message); }
+})();
+</script>
+</body>
+</html>

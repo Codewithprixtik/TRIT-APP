@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TRIT Admin</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#080808;color:#fff;font-family:'Inter',sans-serif;
+  min-height:100vh;display:flex;align-items:center;justify-content:center;padding:1rem}
+.box{background:#111;border:2px solid #FFD700;border-radius:16px;
+  padding:2rem;width:100%;max-width:380px;text-align:center}
+.logo{font-family:'Bangers',cursive;font-size:2rem;letter-spacing:4px;color:#FFD700;margin-bottom:0.2rem}
+.sub{font-size:0.78rem;color:rgba(255,255,255,0.35);margin-bottom:1.8rem}
+.status{padding:0.8rem;border-radius:10px;font-size:0.82rem;margin-bottom:1.2rem;line-height:1.5}
+.ok{background:rgba(46,204,113,0.1);border:1px solid rgba(46,204,113,0.3);color:#2ECC71}
+.err{background:rgba(231,76,60,0.1);border:1px solid rgba(231,76,60,0.3);color:#E74C3C}
+.warn{background:rgba(255,107,0,0.1);border:1px solid rgba(255,107,0,0.3);color:#FF6B00}
+.btn{width:100%;padding:0.85rem;border-radius:10px;font-size:0.95rem;font-weight:700;
+  cursor:pointer;border:none;margin-bottom:0.6rem;touch-action:manipulation}
+.btn-y{background:#FFD700;color:#000}
+.btn-g{background:#2ECC71;color:#000}
+.btn-d{background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.5);border:1px solid #222}
+input{width:100%;padding:0.75rem 1rem;background:#0a0a0a;border:1.5px solid #222;
+  border-radius:8px;color:#fff;font-size:1rem;outline:none;margin-bottom:1rem}
+input:focus{border-color:#FFD700}
+.note{font-size:0.72rem;color:rgba(255,255,255,0.3);line-height:1.7;margin-top:0.8rem}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="box">
+  <div class="logo">TRIT.</div>
+  <div class="sub">Admin Panel · Upstox Daily Login</div>
+
+  <div id="step1">
+    <input type="password" id="pw" placeholder="Admin password" autocomplete="off">
+    <button class="btn btn-y" onclick="login()">LOGIN →</button>
+  </div>
+
+  <div id="step2" style="display:none">
+    <div class="status" id="sts">Checking...</div>
+    <button class="btn btn-y" id="connectBtn" onclick="connect()">
+      📱 LOGIN WITH UPSTOX
+    </button>
+    <button class="btn btn-d" onclick="check()" style="margin-top:0.3rem">🔄 Refresh Status</button>
+    <div class="note">
+      ⏰ Token valid till midnight IST<br>
+      👥 Sab users ko automatically real prices milenge<br>
+      ✅ Ek baar login karo — koi aur kaam nahi!
+    </div>
+  </div>
+
+  <div id="step3" style="display:none">
+    <div class="status ok" id="successMsg"></div>
+    <button class="btn btn-g" onclick="location.href='/app.html'">📈 OPEN APP</button>
+    <button class="btn btn-d" onclick="connect()">🔄 Reconnect</button>
+  </div>
+</div>
+
+<script>
+var PASS = '';
+
+function login(){
+    PASS = document.getElementById('pw').value;
+    if(!PASS){ alert('Password daalo!'); return; }
+    document.getElementById('step1').style.display='none';
+    document.getElementById('step2').style.display='block';
+    check();
+}
+
+async function check(){
+    var el = document.getElementById('sts');
+    el.className='status warn'; el.textContent='🔄 Checking token status...';
+    try {
+        var r = await fetch('/.netlify/functions/market?action=get_token');
+        var d = await r.json();
+        if(d.token){
+            var t = new Date(d.savedAt).toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit'});
+            el.className='status ok';
+            el.textContent='✅ Token active! Last updated: '+t+'\nSab users ke liye real-time prices ON hai!';
+            document.getElementById('connectBtn').textContent='🔄 Refresh Token';
+        } else {
+            el.className='status err';
+            el.textContent='❌ No token — Upstox se login karo!';
+        }
+    } catch(e){
+        el.className='status err';
+        el.textContent='❌ Error: '+e.message;
+    }
+}
+
+async function connect(){
+    var btn = document.getElementById('connectBtn');
+    btn.textContent='Loading...';
+    try {
+        var r = await fetch('/.netlify/functions/market?action=authurl');
+        var d = await r.json();
+        if(d.url){
+            sessionStorage.setItem('trit_admin','1');
+            window.location.href = d.url;
+        }
+    } catch(e){
+        alert('Error: '+e.message);
+        btn.textContent='📱 LOGIN WITH UPSTOX';
+    }
+}
+
+// Check if returning after successful save
+(function(){
+    var p = new URLSearchParams(window.location.search);
+    if(p.get('success')==='1'){
+        document.getElementById('step1').style.display='none';
+        document.getElementById('step2').style.display='none';
+        document.getElementById('step3').style.display='block';
+        document.getElementById('successMsg').textContent=
+            '✅ Upstox connected!\nSab users ko real-time prices mil rahe hain!\n🕒 Valid till midnight IST';
+    }
+})();
+</script>
+</body>
+</html>
